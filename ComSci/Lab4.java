@@ -1,6 +1,7 @@
-public class Lab_CS_6005 {
+public class Lab4 {
        public static void main(String[] args) {
-        int [] arr = { 1, 1, 2, 2, 2, 4, 5, 7 };;            /*10*/ 
+        int [] arr = { 1, 2, 1, 4, 2, 5, 2, 7 };            /*10*/ 
+        // int [] arr = { 1, 1, 2, 2, 2, 4, 5, 7 };
         int k = 0;
         int m = 0;     
         int ans = 0;

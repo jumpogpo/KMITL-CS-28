@@ -1,8 +1,14 @@
+import java.util.Scanner;
+
 public class Lab5Q5_465368 {
     public static void main(String[] args) {
-        for (int e = 0; e < 3; e++) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please input your layer: ");
+        int input = scan.nextInt();
+
+        for (int e = 0; e < input; e++) {
             for (int a = 1; a < 5; a++) {
-                for (int b = 0; b < (6-a) - e; b++) {
+                for (int b = 0; b < ((input + 3) - a) - e; b++) {
                     System.out.print(" ");
                 }
     
@@ -18,8 +24,8 @@ public class Lab5Q5_465368 {
             }
         }
 
-        for  (int g = 0; g < 3; g++) {
-            for (int f = 0; f < 4; f++) {
+        for  (int g = 0; g < 4; g++) {
+            for (int f = 0; f < input + 1 ; f++) {
                 System.out.print(" ");
             }
 
@@ -29,5 +35,7 @@ public class Lab5Q5_465368 {
 
             System.out.println();
         }
+
+        scan.close();
     }
 }
