@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab5_65368 {
+public class Lab5 {
 	static int max(int a, int b) {
 		return (a > b) ? a : b;
 	}
