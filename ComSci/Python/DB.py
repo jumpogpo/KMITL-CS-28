@@ -1,4 +1,3 @@
-from turtle import circle
 import mysql.connector
 
 my_con = mysql.connector.connect(
