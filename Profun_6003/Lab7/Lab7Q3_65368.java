@@ -1,6 +1,6 @@
 public class Lab7Q3_65368 {
     public static void main(String[] args) {
-        numDaysFormDate(4, 6, 2003, 3);
+        numDaysFormDate(7, 5, 2004, 5);
     }
 
     static void numDaysFormDate(int date, int month, int year, int myBD) {
