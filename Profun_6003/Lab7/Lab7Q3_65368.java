@@ -1,6 +1,6 @@
 public class Lab7Q3_65368 {
     public static void main(String[] args) {
-        numDaysFormDate(7, 5, 2004, 5);
+        numDaysFormDate(1, 5, 2004, 6);
     }
 
     static void numDaysFormDate(int date, int month, int year, int myBD) {
@@ -33,7 +33,11 @@ public class Lab7Q3_65368 {
         int dayFromSun = 0;
         int modResult = fromNumDaysFromDate % 7;
 
-        dayFromSun = 7 - modResult;
+        if (modResult != 0) {
+            dayFromSun = 7 - modResult;
+        } else {
+            dayFromSun = 0;
+        }
 
         String str = String.format("You were born on %s and have been born for %d days (2 Jan 2022). Your program says %s", dayName[myBD], fromNumDaysFromDate, dayName[dayFromSun]);
         return str;
