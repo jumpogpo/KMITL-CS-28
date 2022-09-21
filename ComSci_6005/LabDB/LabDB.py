@@ -2,9 +2,9 @@ import mysql.connector
 
 my_con = mysql.connector.connect(
     host="remotemysql.com",
-    user="bPHiiRCWTe",
-    passwd="Ftl2nnrmAp",
-    database="bPHiiRCWTe"
+    user="",
+    passwd="",
+    database=""
 )
 print('Connect to MYSQL\n')
 cursor = my_con.cursor()
@@ -18,7 +18,7 @@ for x in cursor :
 print("\n[1.4]")
 # 1.4
 try:
-    cursor.execute("""INSERT INTO characters (id, fName, lName, popularity, animeFK) VALUES (503680, 'Thanapat', 'Viper', 9999, 11)""")
+    cursor.execute("""INSERT INTO characters (id, fName, lName, popularity, animeFK) VALUES (503680, 'Thanapat', 'IG: kun.tnp', 9999, 11)""")
     my_con.commit()
     print("INSERT SUCCESS\n")
 except:
@@ -26,7 +26,7 @@ except:
 
 print("[1.5]")
 # 1.5
-cursor.execute("SELECT * FROM anime INNER JOIN characters ON anime.id = characters.animeFK WHERE title = 'demon slayer'")
+cursor.execute("SELECT * FROM characters INNER JOIN anime ON characters.id = 503680 and anime.id = 11")
 for x in cursor:
     print(x[0], x)
 
