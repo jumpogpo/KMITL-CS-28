@@ -18,7 +18,7 @@ for x in cursor :
 print("\n[1.4]")
 # 1.4
 try:
-    cursor.execute("""INSERT INTO characters (id, fName, lName, popularity, animeFK) VALUES (503680, 'Thanapat', 'IG: kun.tnp', 9999, 11)""")
+    cursor.execute("INSERT INTO characters (id, fName, lName, popularity, animeFK) VALUES (503680, 'Thanapat', 'IG: kun.tnp', 9999, 11)")
     my_con.commit()
     print("INSERT SUCCESS\n")
 except:
