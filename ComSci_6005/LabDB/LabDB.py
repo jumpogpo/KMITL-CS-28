@@ -26,7 +26,7 @@ except:
 
 print("[1.5]")
 # 1.5
-cursor.execute("SELECT * FROM characters INNER JOIN anime ON characters.id = 503680 and anime.id = 11")
+cursor.execute("SELECT * FROM characters INNER JOIN anime ON characters.animeFK = anime.id AND characters.id = '503680'")
 for x in cursor:
     print(x[0], x)
 
