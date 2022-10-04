@@ -44,7 +44,7 @@ public class ProFun08_Q3_65368 {
         for (int i = arr.length - 1; i > index; i--) {
             arr[i] = arr[i - 1];
         }
-
+        
         arr[index] = value;
         return arr;
     }
