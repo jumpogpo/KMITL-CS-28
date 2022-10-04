@@ -9,6 +9,7 @@ public class ProFun08_Q3_65368 {
 
     static void topK(int [] intArr) {
         Scanner sc = new Scanner(System.in);
+        int[] emptyArr = new int[intArr.length];
         int input = 1;
 
         while (true) {
@@ -16,7 +17,7 @@ public class ProFun08_Q3_65368 {
             input = sc.nextInt();
 
             if (input > 0) {
-                if (checkArr(intArr)) {
+                if (Arrays.equals(intArr, emptyArr)) {
                     intArr[0] = input;
                 } else {
                     int minValue = Integer.MAX_VALUE;
@@ -39,19 +40,6 @@ public class ProFun08_Q3_65368 {
         }
 
         sc.close();
-    }
-
-    static boolean checkArr(int[] arr) {
-        boolean empty = true;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                empty = false;
-                break;
-            }
-        }
-        
-        return empty;
     }
 
     static int[] insertArr(int[] arr, int index, int value) {
