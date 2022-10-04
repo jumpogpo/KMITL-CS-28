@@ -16,27 +16,25 @@ public class ProFun08_Q3_65368 {
             System.out.print("Please input a number: ");
             input = sc.nextInt();
 
-            if (input > 0) {
-                if (Arrays.equals(intArr, emptyArr)) {
-                    intArr[0] = input;
-                } else {
-                    int minValue = Integer.MAX_VALUE;
-                    int index = -1;
+            if (input <= 0) break;
 
-                    for (int i = 0; i < intArr.length; i++) {
-                        if (intArr[i] <= minValue && intArr[i] > 0 && intArr[i] > input) {
-                            minValue = intArr[i];
-                            index = i;
-                        }
+            if (Arrays.equals(intArr, emptyArr)) {
+                intArr[0] = input;
+            } else {
+                int minValue = Integer.MAX_VALUE;
+                int index = -1;
+
+                for (int i = 0; i < intArr.length; i++) {
+                    if (intArr[i] <= minValue && intArr[i] > 0 && intArr[i] > input) {
+                        minValue = intArr[i];
+                        index = i;
                     }
-
-                    insertArr(intArr, index + 1, input);
                 }
 
-                System.out.println(Arrays.toString(intArr));
-            } else {
-                break;
+                insertArr(intArr, index + 1, input);
             }
+
+            System.out.println(Arrays.toString(intArr));
         }
 
         sc.close();
