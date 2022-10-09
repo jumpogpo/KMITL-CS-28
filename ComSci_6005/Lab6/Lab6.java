@@ -16,15 +16,11 @@ public class Lab6 {
         perW[i] = (double) values[i] / weights[i];
         int k = 0;
 
-        while ( k < perW.length) {
-            if (weights[k] < C) {
-                sumV += values[k];
+        while ( sumW <= C ) {
+            if (!isPicked[k])  {
+                isPicked[k] = true;
                 sumW += weights[k];
-                C-= weights[k];
-            } else {
-                sumV += C * perW[k];
-                sumW += C;
-                C -= C;
+                sumV = values[k];
             }
             k++;
         }
