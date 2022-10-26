@@ -7,9 +7,9 @@ public class Main {
     int column = Integer.parseInt(size[0]);
     int row = Integer.parseInt(size[1]);
 
-    int arr[][] = new int[column][row];
+    int arr[][] = new int[row][column];
 
-    for (int i = 0; i < column; i++) {
+    for (int i = 0; i < row; i++) {
       String[] data = sc.nextLine().split(" ");
 
       for (int j = 0; j < data.length; j++) {
@@ -33,13 +33,13 @@ public class Main {
     }
 
     for (int z = 0; z < arr.length; z++) {
+      String text = "";
       for (int x = 0; x < arr[z].length; x++) {
-        System.out.print(arr[z][x]);
+        text = text + arr[z][x];
 
-        if (x != arr[x].length - 1) System.out.print(" ");
+        if (x != arr[x].length - 1) text = text + " ";
       }
-
-      System.out.println();
+      System.out.println(text.trim());
     }
   }
 }
