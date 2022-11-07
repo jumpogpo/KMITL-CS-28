@@ -1,0 +1,97 @@
+# Example 1
+Input:
+    Enter a prime number: 1111
+    Enter number of shares: 5
+    Enter threshold: 3
+
+    Format shares: (x, y)
+    Enter share #1: 1, 669
+    Enter share #2: 2, 875
+    Enter share #3: 3, 62
+    Enter share #4: 4, 452
+    Enter share #5: 5, 934
+
+Output:
+    Secret: 555.0
+
+---------------------------------------------------------------------------------
+
+# Example 2
+Input:
+    Enter a prime number: 1200
+    Enter number of shares: 8
+    Enter threshold: 3
+    
+    Format shares: (x, y)
+    Enter share #1: 1, 427
+    Enter share #2: 2, 506
+    Enter share #3: 3, 993
+    Enter share #4: 4, 508
+    Enter share #5: 5, 431
+    Enter share #6: 6, 702
+    Enter share #7: 7, 121
+    Enter share #8: 8, 1088
+
+Output:
+    Secret: 696.0
+
+---------------------------------------------------------------------------------
+
+# Example 3
+Input:
+    Enter a prime number: 1000
+    Enter number of shares: 5
+    Enter threshold: 3
+    
+    Format shares: (x, y)
+    Enter share #1: 1, 885
+    Enter share #2: 2, 836
+    Enter share #3: 3, 353
+    Enter share #4: 4, 436
+    Enter share #5: 5, 85
+
+Output:
+    Secret: 500.0
+
+---------------------------------------------------------------------------------
+
+# Example 4
+Input:
+    Enter a prime number: 1269
+    Enter number of shares: 5
+    Enter threshold: 3
+    
+    Format shares: (x, y)
+    Enter share #1: 1, 891
+    Enter share #2: 2, 271
+    Enter share #3: 3, 847
+    Enter share #4: 4, 81
+    Enter share #5: 5, 511
+
+Output:
+    Secret: 169.0
+
+---------------------------------------------------------------------------------
+
+# Example 5
+Input:
+    Enter a prime number: 1999
+    Enter number of shares: 9
+    Enter threshold: 2
+    
+    Format shares: (x, y)
+    Enter share #1: 1, 1667
+    Enter share #2: 2, 101
+    Enter share #3: 3, 534
+    Enter share #4: 4, 967
+    Enter share #5: 5, 1400
+    Enter share #6: 6, 1833
+    Enter share #7: 7, 267
+    Enter share #8: 8, 700
+    Enter share #9: 9, 1133
+
+
+Output:
+    Secret: 1234.0
+
+---------------------------------------------------------------------------------
