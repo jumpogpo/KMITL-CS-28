@@ -19,8 +19,8 @@ public class Accountant extends Programmer {
         return specialty;
     }
 
-    public void setAccountExperience() {
-
+    public void setAccountExperience(int experience) {
+        this.experience = experience;
     }
 
     public int getAccountExperience() {
