@@ -31,7 +31,7 @@ public class Lab3 {
             } else if (e instanceof Accountant) {
                 str = ((Accountant) e).tellProfit();
             } else {
-                str = "";
+                continue;
             }
 
             System.out.println(str);
