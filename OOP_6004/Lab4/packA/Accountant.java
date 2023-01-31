@@ -5,7 +5,6 @@ public class Accountant extends Employee {
     private int experience;
     private String specialty;
 
-    @Override
     public void sayHi() {
         System.out.println("Say hi from Accountant");
     }

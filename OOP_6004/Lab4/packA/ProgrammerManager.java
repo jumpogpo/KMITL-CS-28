@@ -6,12 +6,10 @@ public class ProgrammerManager extends Programmer implements ManagerRoles {
         super(name, exp, sal);
     }
 
-    @Override
     public void sayHi() {
         System.out.println("Coding in [solidity, typescript]");
     }
 
-    @Override
     public String coding() {
         return "ProgrammerManager Coding";
     }
@@ -21,7 +19,6 @@ public class ProgrammerManager extends Programmer implements ManagerRoles {
         return p.salary;
     }
 
-    @Override
     public String toString() {
         return String.format("ManagerProgrammer [name=%s, experience=%d salary=%d]", name, experience, salary);
     }

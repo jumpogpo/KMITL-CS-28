@@ -9,7 +9,6 @@ public class Programmer extends Employee {
         super(name, exp, sal);
     }
 
-    @Override
     public void sayHi() {
         System.out.println("Say hi from Programmer");
     }
