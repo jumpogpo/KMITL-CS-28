@@ -6,10 +6,7 @@ public class Programmer extends Employee {
     private ArrayList<String> skills;
 
     public Programmer(String name, int exp, int sal) {
-        super();
-        super.name = name;
-        super.experience = exp;
-        super.salary = sal;
+        super(name, exp, sal);
     }
 
     @Override

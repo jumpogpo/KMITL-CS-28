@@ -1,6 +1,6 @@
 import packA.*;
 
-public class Lab4CanSwimIntf {
+public class Lab4Q1 {
     public static void main(String[] args) {
         q1();
     }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 import packA.*;
 
-public class Lab4 {
+public class Lab4Q2 {
     public static void main(String[] args) {
         q1();
         System.out.println("-----------------");
