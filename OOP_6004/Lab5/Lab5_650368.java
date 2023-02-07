@@ -1,6 +1,10 @@
 import java.util.Arrays;
 
-public class Lab5FunctionalInterface {
+interface ArrayProcessor {
+    public int calculate(int[] arr);
+}
+
+public class Lab5_650368 {
     static int[] data = { 28, 58, 8, 77, 48, 39 };
     static ArrayProcessor q1NumberOfEvenElement; // 4
     static ArrayProcessor q2IndexOfLargestEvenValue; // 1
