@@ -124,6 +124,7 @@ public class App {
 
             if (source == btnNew) {
                 level = 0;
+                tableSize = 4;
                 lbLevel.setText("Level: " + level);
                 newTable();
             } else {
@@ -148,7 +149,7 @@ public class App {
                             tableSize += 2;
                         }
 
-                        Timer timer = new Timer(2000, new ActionListener() {
+                        Timer timer = new Timer(1000, new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 lbLevel.setText("Level: " + level);
