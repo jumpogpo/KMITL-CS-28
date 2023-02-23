@@ -25,10 +25,10 @@ public class App {
     private JFrame f;
     private JPanel top, middle;
     private JButton btnNew, currentOpenButton;
-    private JLabel lbLevel;
+    private JLabel lbLevel, lbTimeRemaining;
     private Icon questionMarkIcon;
-    private int tableSize = 4, alreadyOpen = 0, level = 1, count = 0, currentRandNumber = rand.nextInt(100);
-    private boolean cooldown = false;
+    private int tableSize = 4, alreadyOpen = 0, level = 1, timeRemaining = 60, count = 0, currentRandNumber = rand.nextInt(100);
+    private boolean cooldown = false, gameStart = false;
     AllButtonListener buttonAction = new AllButtonListener();
 
     public App(){
@@ -37,11 +37,11 @@ public class App {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setResizable(false);
         f.setLayout(new BorderLayout());
-        detail();
+        initializeUI();
         f.setVisible(true);
     }
 
-    private void detail(){
+    private void initializeUI(){
         try {
             Image resultImageQuestionMarkImage = new ImageIcon("src/../picture/QuestionMark.png").getImage().getScaledInstance(150, 80, Image.SCALE_DEFAULT);
             questionMarkIcon = (Icon) new ImageIcon(resultImageQuestionMarkImage);
@@ -53,10 +53,12 @@ public class App {
         middle = new JPanel();
         btnNew = new JButton("New Game");
         lbLevel = new JLabel("Level: " + level);
+        lbTimeRemaining = new JLabel(String.valueOf(timeRemaining));
 
         btnNew.addActionListener(buttonAction);
 
-        newTable();
+        createNewTable();
+        countDownTimer();
 
         top.setBackground(new java.awt.Color(33, 33, 33));
         middle.setBackground(new java.awt.Color(33, 33, 33));
@@ -67,17 +69,48 @@ public class App {
         middle.setLayout(new GridLayout(tableSize / 2, tableSize / 2));
 
         lbLevel.setForeground(Color.WHITE);
+        lbTimeRemaining.setForeground(Color.WHITE);
 
         top.add(btnNew);
+        top.add(lbTimeRemaining);
         top.add(lbLevel);
 
         f.add(top, BorderLayout.NORTH);
         f.add(middle, BorderLayout.CENTER);
     }
 
-    private void newTable() {
+    private void resetGameSettings() {
+        level = 0;
+        tableSize = 4;
+        lbLevel.setText("Level: " + level);
+        createNewTable();
+    }
+
+    private void countDownTimer() {
+        Thread thread = new Thread(() -> {
+            while (gameStart) {
+                try {
+                    Thread.sleep(1000);
+                    timeRemaining -= 1;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                if (timeRemaining <= 0) {
+                    resetGameSettings();
+                } else {
+                    lbTimeRemaining.setText(String.valueOf(timeRemaining));
+                }
+            }
+        });
+
+        thread.start();
+    }
+
+    private void createNewTable() {
         ArrayList<JButton> gameButton = new ArrayList<>();
         middle.removeAll(); 
+        timeRemaining = 60;
 
         for (int i = 1; i < (tableSize + 1); i++) {
             JButton button = new JButton(questionMarkIcon);
@@ -115,6 +148,8 @@ public class App {
             clonedGameButton.remove(index);
             count++;
         }
+
+        gameStart = true;
     }
 
     private class AllButtonListener implements ActionListener {
@@ -123,10 +158,7 @@ public class App {
             JButton source = (JButton) ev.getSource();
 
             if (source == btnNew) {
-                level = 0;
-                tableSize = 4;
-                lbLevel.setText("Level: " + level);
-                newTable();
+                resetGameSettings();
             } else {
                 if (currentOpenButton == null) {
                     if (source.getIcon() == questionMarkIcon && !cooldown) {
@@ -141,6 +173,7 @@ public class App {
                     alreadyOpen += 2;
 
                     if (alreadyOpen == tableSize) {
+                        gameStart = false;
                         cooldown = true;
                         alreadyOpen = 0;
                         level++;
@@ -153,7 +186,7 @@ public class App {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 lbLevel.setText("Level: " + level);
-                                newTable();
+                                createNewTable();
                             }
                         });
 
