@@ -28,13 +28,13 @@ public class App {
     private JLabel lbLevel, lbTimeRemaining;
     private Icon pictureIcon;
     private Font invisibleFont, unInvisibleFont;
-    private int tableSize = 4, alreadyOpen = 0, level = 1, timeRemaining = 60, count = 0, currentRandNumber = rand.nextInt(100);
+    private int tableSize = 8, alreadyOpen = 0, level = 1, timeRemaining = 60, count = 0, currentRandNumber = rand.nextInt(100);
     private boolean cooldown = false, gameStart = false;
     AllButtonListener buttonAction = new AllButtonListener();
 
     public App(){
         f = new JFrame("Match Numbers");
-        f.setSize(500,450);
+        f.setSize(700,600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setResizable(false);
         f.setLayout(new BorderLayout());
@@ -59,24 +59,26 @@ public class App {
         lbLevel = new JLabel("Level: " + level);
         lbTimeRemaining = new JLabel(String.valueOf(timeRemaining));
 
-        btnNew.addActionListener(buttonAction);
-
         createNewTable();
 
         top.setBackground(new java.awt.Color(33, 33, 33));
         middle.setBackground(new java.awt.Color(33, 33, 33));
 
-        btnNew.setPreferredSize(new Dimension(150,50));
+        btnNew.setPreferredSize(new Dimension(150,40));
         lbLevel.setPreferredSize(new Dimension(65,50));
+        lbTimeRemaining.setPreferredSize(new Dimension(150, 50));
+        lbTimeRemaining.setBounds(500, 50, 100, 50);
 
         middle.setLayout(new GridLayout(tableSize / 2, tableSize / 2));
 
         lbLevel.setForeground(Color.WHITE);
         lbTimeRemaining.setForeground(Color.WHITE);
 
+        btnNew.addActionListener(buttonAction);
+
         top.add(btnNew);
-        top.add(lbTimeRemaining);
         top.add(lbLevel);
+        top.add(lbTimeRemaining);
 
         f.add(top, BorderLayout.NORTH);
         f.add(middle, BorderLayout.CENTER);
@@ -94,8 +96,6 @@ public class App {
     private void countDownTimer() {
         Thread thread = new Thread(() -> {
             while (true) {
-                System.out.println(gameStart);
-
                 if (gameStart) {
                     try {
                         Thread.sleep(1000);
@@ -106,10 +106,10 @@ public class App {
     
                     if (timeRemaining <= 0) {
                         resetGameSettings();
-                    } else {
-                        lbTimeRemaining.setText(String.valueOf(timeRemaining));
                     }
                 }
+
+                lbTimeRemaining.setText(String.valueOf(timeRemaining));
             }
         });
 
@@ -173,7 +173,6 @@ public class App {
             if (source == btnNew) {
                 resetGameSettings();
             } else {
-                System.out.println(source.getText());
                 if (currentOpenButton == null) {
                     if (source.getIcon() == pictureIcon && !cooldown) {
                         currentOpenButton = source;
