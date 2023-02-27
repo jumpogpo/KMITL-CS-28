@@ -26,7 +26,8 @@ public class App {
     private JPanel top, middle;
     private JButton btnNew, currentOpenButton;
     private JLabel lbLevel, lbTimeRemaining;
-    private Icon questionMarkIcon;
+    private Icon pictureIcon;
+    private Font invisibleFont, unInvisibleFont;
     private int tableSize = 4, alreadyOpen = 0, level = 1, timeRemaining = 60, count = 0, currentRandNumber = rand.nextInt(100);
     private boolean cooldown = false, gameStart = false;
     AllButtonListener buttonAction = new AllButtonListener();
@@ -42,9 +43,12 @@ public class App {
     }
 
     private void initializeUI(){
+        invisibleFont = new Font("Times New Roman", Font.PLAIN, 0);
+        unInvisibleFont = new Font("Times New Roman", Font.PLAIN, 30);
+
         try {
-            Image resultImageQuestionMarkImage = new ImageIcon("src/../picture/QuestionMark.png").getImage().getScaledInstance(150, 80, Image.SCALE_DEFAULT);
-            questionMarkIcon = (Icon) new ImageIcon(resultImageQuestionMarkImage);
+            Image resultPictureIcon = new ImageIcon("src/../picture/QuestionMark.png").getImage().getScaledInstance(150, 100, Image.SCALE_DEFAULT);
+            pictureIcon = (Icon) new ImageIcon(resultPictureIcon);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -58,7 +62,6 @@ public class App {
         btnNew.addActionListener(buttonAction);
 
         createNewTable();
-        countDownTimer();
 
         top.setBackground(new java.awt.Color(33, 33, 33));
         middle.setBackground(new java.awt.Color(33, 33, 33));
@@ -77,10 +80,12 @@ public class App {
 
         f.add(top, BorderLayout.NORTH);
         f.add(middle, BorderLayout.CENTER);
+
+        countDownTimer();
     }
 
     private void resetGameSettings() {
-        level = 0;
+        level = 1;
         tableSize = 4;
         lbLevel.setText("Level: " + level);
         createNewTable();
@@ -88,18 +93,22 @@ public class App {
 
     private void countDownTimer() {
         Thread thread = new Thread(() -> {
-            while (gameStart) {
-                try {
-                    Thread.sleep(1000);
-                    timeRemaining -= 1;
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            while (true) {
+                System.out.println(gameStart);
 
-                if (timeRemaining <= 0) {
-                    resetGameSettings();
-                } else {
-                    lbTimeRemaining.setText(String.valueOf(timeRemaining));
+                if (gameStart) {
+                    try {
+                        Thread.sleep(1000);
+                        timeRemaining -= 1;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+    
+                    if (timeRemaining <= 0) {
+                        resetGameSettings();
+                    } else {
+                        lbTimeRemaining.setText(String.valueOf(timeRemaining));
+                    }
                 }
             }
         });
@@ -111,11 +120,11 @@ public class App {
         ArrayList<JButton> gameButton = new ArrayList<>();
         middle.removeAll(); 
         timeRemaining = 60;
+        lbTimeRemaining.setText(String.valueOf(timeRemaining));
 
         for (int i = 1; i < (tableSize + 1); i++) {
-            JButton button = new JButton(questionMarkIcon);
-            button.setForeground(Color.WHITE);
-            button.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+            JButton button = new JButton(pictureIcon);
+            button.setFont(invisibleFont);
             button.setPreferredSize(new Dimension(150,50));
             button.addActionListener(buttonAction);
             button.setText(null);
@@ -132,9 +141,10 @@ public class App {
         currentOpenButton = null;
         cooldown = false;
         alreadyOpen = 0;
+
         for (JButton button : clonedGameButton) {
-            button.setForeground(Color.WHITE);
-            button.setIcon(questionMarkIcon);
+            button.setFont(invisibleFont);
+            button.setIcon(pictureIcon);
         }
 
         for (int a = 0; a < tableSize; a++) {
@@ -144,7 +154,10 @@ public class App {
             }
 
             int index = (int) (Math.random() * clonedGameButton.size());
-            clonedGameButton.get(index).setText(String.valueOf(currentRandNumber));
+            JButton randomButton = clonedGameButton.get(index);
+
+            randomButton.setText(String.valueOf(currentRandNumber));
+            randomButton.setFont(invisibleFont);
             clonedGameButton.remove(index);
             count++;
         }
@@ -160,15 +173,16 @@ public class App {
             if (source == btnNew) {
                 resetGameSettings();
             } else {
+                System.out.println(source.getText());
                 if (currentOpenButton == null) {
-                    if (source.getIcon() == questionMarkIcon && !cooldown) {
+                    if (source.getIcon() == pictureIcon && !cooldown) {
                         currentOpenButton = source;
-                        source.setForeground(Color.BLACK);
+                        source.setFont(unInvisibleFont);
                         source.setIcon(null);
                     }
-                } else if (currentOpenButton.getText().equals(source.getText()) && source.getIcon() == questionMarkIcon && !cooldown) {
+                } else if (currentOpenButton.getText().equals(source.getText()) && source.getIcon() == pictureIcon && !cooldown) {
                     currentOpenButton = null;
-                    source.setForeground(Color.BLACK);
+                    source.setFont(unInvisibleFont);
                     source.setIcon(null);
                     alreadyOpen += 2;
 
@@ -194,20 +208,20 @@ public class App {
                         timer.start();
                     }
                 
-                } else if (!currentOpenButton.getText().equals(source.getText()) && source.getIcon() == questionMarkIcon && !cooldown) {
+                } else if (!currentOpenButton.getText().equals(source.getText()) && source.getIcon() == pictureIcon && !cooldown) {
                     cooldown = true;
-                    source.setForeground(Color.BLACK);
+                    source.setFont(unInvisibleFont);
                     source.setIcon(null);
 
                     Timer timer = new Timer(2000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            source.setForeground(Color.WHITE);
-                            source.setIcon(questionMarkIcon);
+                            source.setFont(invisibleFont);
+                            source.setIcon(pictureIcon);
 
                             if (currentOpenButton != null) {
-                                currentOpenButton.setForeground(Color.WHITE);
-                                currentOpenButton.setIcon(questionMarkIcon);
+                                currentOpenButton.setFont(invisibleFont);
+                                currentOpenButton.setIcon(pictureIcon);
                                 currentOpenButton = null;
                             }
                             
