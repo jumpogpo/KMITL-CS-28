@@ -28,7 +28,7 @@ public class App {
     private JLabel lbLevel, lbTimeRemaining;
     private Icon pictureIcon;
     private Font invisibleFont, unInvisibleFont;
-    private int tableSize = 8, alreadyOpen = 0, level = 1, timeRemaining = 60, count = 0, currentRandNumber = rand.nextInt(100);
+    private int tableSize = 4, alreadyOpen = 0, level = 1, timeRemaining = 60, count = 0, currentRandNumber = rand.nextInt(100);
     private boolean cooldown = false, gameStart = false;
     AllButtonListener buttonAction = new AllButtonListener();
 
