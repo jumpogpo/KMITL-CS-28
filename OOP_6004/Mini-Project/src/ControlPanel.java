@@ -40,6 +40,14 @@ class ControlPanel extends JPanel {
         add(timeRemainingLb);
     }
 
+    protected void setTimeRemainingLB(int time) {
+        timeRemainingLb.setText("Time Remaining: " + time);
+    }
+
+    protected void setLevelLB(int level) {
+        gameLevelLb.setText("Level: " + level);
+    }
+
     protected void timer() {        
         countDownTimer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -56,14 +64,6 @@ class ControlPanel extends JPanel {
         });
 
         countDownTimer.start();
-    }
-
-    protected void setTimeRemainingLB(int time) {
-        timeRemainingLb.setText("Time Remaining: " + time);
-    }
-
-    protected void setLevelLB(int level) {
-        gameLevelLb.setText("Level: " + level);
     }
 
     private class NewGameButtonListener implements ActionListener {
