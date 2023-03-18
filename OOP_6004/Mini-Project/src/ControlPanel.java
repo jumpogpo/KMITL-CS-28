@@ -33,15 +33,15 @@ class ControlPanel extends JPanel {
         nextGameButton.addActionListener(controlPanelGameAction);
         nextGameButton.setFont(mainFont);
     
-        gameLevelLb = new JLabel("Level: " + gamePanel.getLevel());
-        gameLevelLb.setPreferredSize(new Dimension(65, 50));
-        gameLevelLb.setForeground(Color.WHITE);
-        gameLevelLb.setFont(mainFont);
-    
         timeRemainingLb = new JLabel(String.valueOf(gamePanel.getTimeRemaining()));
         timeRemainingLb.setBounds(500, 50, 100, 50);
         timeRemainingLb.setForeground(Color.RED);
         timeRemainingLb.setFont(mainFont);
+
+        gameLevelLb = new JLabel("Level: " + gamePanel.getLevel());
+        gameLevelLb.setPreferredSize(new Dimension(65, 50));
+        gameLevelLb.setForeground(Color.WHITE);
+        gameLevelLb.setFont(mainFont);
     
         setBackground(new java.awt.Color(33, 33, 33));
         setLayout(new BorderLayout());
@@ -55,6 +55,7 @@ class ControlPanel extends JPanel {
         timeAndLevelBox.add(timeRemainingLb);
         timeAndLevelBox.add(Box.createHorizontalGlue());
         timeAndLevelBox.add(gameLevelLb);
+        timeAndLevelBox.add(Box.createHorizontalStrut(10));
     
         add(buttonBox, BorderLayout.WEST);
         add(timeAndLevelBox, BorderLayout.CENTER);
