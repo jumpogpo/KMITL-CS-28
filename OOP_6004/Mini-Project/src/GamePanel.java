@@ -17,7 +17,7 @@ public class GamePanel extends JPanel {
     private ArrayList<Integer> usedNumber;
     private int buttonAmount, level, timeRemaining;
     private int currentRandNumber;
-    private boolean gameStart;
+    private boolean pauseGame;
     private ControlPanel controlPanel;
 
     public GamePanel() {
@@ -31,7 +31,7 @@ public class GamePanel extends JPanel {
 
     private void createButton() {
         int count = 0;
-        gameStart = false;
+        pauseGame = true;
         usedNumber = new ArrayList<>();
         gameButtons = new ArrayList<>();
 
@@ -89,7 +89,7 @@ public class GamePanel extends JPanel {
                         ((GameButton) component).hideNumber();
                     }
                 }
-                gameStart = true;
+                pauseGame = false;
             }
         });
 
@@ -102,14 +102,14 @@ public class GamePanel extends JPanel {
         buttonAmount = 4;
         level = 1;
         timeRemaining = 60;
-        gameStart = false;
+        pauseGame = true;
         createButton();
     }
 
     protected void nextGame() {
         this.removeAll();
         timeRemaining = 60;
-        gameStart = false;
+        pauseGame = true;
         controlPanel.setLevelLB(level);
         controlPanel.setTimeRemainingLB(timeRemaining);
         createButton();
@@ -128,11 +128,7 @@ public class GamePanel extends JPanel {
     }
 
     protected boolean getGameStatus() {
-        return gameStart;
-    }
-
-    protected void setGameStatus(boolean status) {
-        gameStart = status;
+        return pauseGame;
     }
 
     protected void setTimeRemaining(int time) {

@@ -53,7 +53,7 @@ class ControlPanel extends JPanel {
             public void actionPerformed(ActionEvent evt) {
                 int timeRemaining = gamePanel.getTimeRemaining();
 
-                if (!gamePanel.getGameStatus()) return;
+                if (gamePanel.getGameStatus()) return;
                 if (timeRemaining > 0) {
                     gamePanel.setTimeRemaining(timeRemaining - 1);
                     setTimeRemainingLB(gamePanel.getTimeRemaining());

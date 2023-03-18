@@ -18,6 +18,7 @@ public class GameButton extends JButton {
     
     private static GameButton buttonOpened = null;
     private static int alreadyOpen = 0;
+    private static boolean cooldown = false;
     private GamePanel gamePanel;
 
     public GameButton(GamePanel gamePanel) {
@@ -53,7 +54,7 @@ public class GameButton extends JButton {
         public void actionPerformed(ActionEvent ev) {
             GameButton source = (GameButton) ev.getSource();
 
-            if (source.getIcon() == null || !gamePanel.getGameStatus()) return;
+            if (source.getIcon() == null || cooldown) return;
 
             source.showNumber();
 
@@ -80,14 +81,14 @@ public class GameButton extends JButton {
                     timer.setRepeats(false);
                     timer.start();
                 } else {
-                    gamePanel.setGameStatus(false);
+                    cooldown = true;
 
                     Timer timer = new Timer(2000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             source.hideNumber();
                             buttonOpened.hideNumber();
-                            gamePanel.setGameStatus(true);
+                            cooldown = false;
                             buttonOpened = null;
                         }
                     });
