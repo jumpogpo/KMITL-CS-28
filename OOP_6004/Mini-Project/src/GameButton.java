@@ -28,6 +28,7 @@ public class GameButton extends JButton {
         int rows = layout.getRows();
         int columns = layout.getColumns();
         ImageIcon questionIcon = new ImageIcon(new ImageIcon("src/../picture/QuestionMark.png").getImage().getScaledInstance(300 / columns, 200 / rows, Image.SCALE_SMOOTH));
+        
         setIcon(questionIcon);
         setPreferredSize(new Dimension(150, 50));
         setFont(invisibleFont);
@@ -71,9 +72,9 @@ public class GameButton extends JButton {
                         public void actionPerformed(ActionEvent e) {
                             if (alreadyOpen == gamePanel.getButtonAmount()) {
                                 if (gamePanel.getLevel() % 5 == 0) gamePanel.increaseButtonAmount();
-                                alreadyOpen = 0;
                                 gamePanel.increaseLevel();
                                 gamePanel.nextGame();
+                                alreadyOpen = 0;
                             }
                         }
                     });
@@ -88,8 +89,8 @@ public class GameButton extends JButton {
                         public void actionPerformed(ActionEvent e) {
                             source.hideNumber();
                             buttonOpened.hideNumber();
-                            cooldown = false;
                             buttonOpened = null;
+                            cooldown = false;
                         }
                     });
 
