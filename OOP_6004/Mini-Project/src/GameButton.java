@@ -67,20 +67,11 @@ public class GameButton extends JButton {
                     buttonOpened = null;
                     alreadyOpen += 2;
 
-                    Timer timer = new Timer(2000, new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            if (alreadyOpen == gamePanel.getButtonAmount()) {
-                                if (gamePanel.getLevel() % 5 == 0) gamePanel.increaseButtonAmount();
-                                gamePanel.increaseLevel();
-                                gamePanel.nextGame();
-                                alreadyOpen = 0;
-                            }
-                        }
-                    });
-
-                    timer.setRepeats(false);
-                    timer.start();
+                    if (alreadyOpen == gamePanel.getButtonAmount()) {
+                        gamePanel.setGameFinish(true);
+                        gamePanel.setPauseGame(true);
+                        alreadyOpen = 0;
+                    }
                 } else {
                     cooldown = true;
 
