@@ -55,7 +55,7 @@ class ControlPanel extends JPanel {
         timeAndLevelBox.add(timeRemainingLb);
         timeAndLevelBox.add(Box.createHorizontalGlue());
         timeAndLevelBox.add(gameLevelLb);
-        timeAndLevelBox.add(Box.createHorizontalStrut(10));
+        timeAndLevelBox.add(Box.createHorizontalStrut(20));
     
         add(buttonBox, BorderLayout.WEST);
         add(timeAndLevelBox, BorderLayout.CENTER);
