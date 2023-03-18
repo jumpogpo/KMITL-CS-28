@@ -32,7 +32,6 @@ public class GameButton extends JButton {
         setIcon(questionIcon);
         setPreferredSize(new Dimension(150, 50));
         setFont(invisibleFont);
-        setIcon(questionIcon);
         addActionListener(gameButtonAction);
     }
 
