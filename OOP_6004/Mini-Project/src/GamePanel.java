@@ -58,6 +58,8 @@ public class GamePanel extends JPanel {
             count++;
         }
 
+        usedNumber = new ArrayList<>();
+
         preViewNumber();
     }
 
