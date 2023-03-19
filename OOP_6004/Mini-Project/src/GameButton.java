@@ -67,6 +67,7 @@ public class GameButton extends JButton {
                     alreadyOpen += 2;
 
                     if (alreadyOpen == gamePanel.getButtonAmount()) {
+                        if (gamePanel.getLevel() % 5 == 0) gamePanel.increaseButtonAmount();
                         gamePanel.setGameFinish(true);
                         gamePanel.setPauseGame(true);
                         alreadyOpen = 0;
