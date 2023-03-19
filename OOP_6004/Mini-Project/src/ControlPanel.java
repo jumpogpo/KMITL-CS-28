@@ -39,7 +39,7 @@ class ControlPanel extends JPanel {
         timeRemainingLb.setFont(mainFont);
 
         gameLevelLb = new JLabel("Level: " + gamePanel.getLevel());
-        gameLevelLb.setPreferredSize(new Dimension(65, 50));
+        gameLevelLb.setPreferredSize(new Dimension(100, 50));
         gameLevelLb.setForeground(Color.WHITE);
         gameLevelLb.setFont(mainFont);
     
