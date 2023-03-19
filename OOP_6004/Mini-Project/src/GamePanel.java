@@ -59,7 +59,6 @@ public class GamePanel extends JPanel {
         }
 
         usedNumber = new ArrayList<>();
-
         preViewNumber();
     }
 
