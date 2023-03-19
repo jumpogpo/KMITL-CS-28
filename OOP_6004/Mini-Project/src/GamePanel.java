@@ -1,5 +1,6 @@
 package src;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -20,7 +21,7 @@ public class GamePanel extends JPanel {
     private boolean pauseGame, gameFinish;
     private ControlPanel controlPanel;
 
-    public GamePanel() {
+    public GamePanel(JFrame frame) {
         buttonAmount = 4;
         level = 1;
         timeRemaining = 60;

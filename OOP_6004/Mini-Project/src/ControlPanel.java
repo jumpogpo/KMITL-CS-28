@@ -2,7 +2,6 @@ package src;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.Timer;
@@ -18,8 +17,8 @@ class ControlPanel extends JPanel {
     private final JButton newGameButton, nextGameButton;
     private final JLabel gameLevelLb, timeRemainingLb;
     private final ControlPanelButtonListener controlPanelGameAction;
-    private final GamePanel gamePanel;
-    private final Font mainFont = new Font("Times New Roman", Font.PLAIN, 18);
+    private GamePanel gamePanel;
+    private final Font mainFont = new Font("Comic Sans MS", Font.BOLD, 18);
     private Timer countDownTimer;
     
     public ControlPanel(GamePanel gamePanel) {
@@ -29,12 +28,10 @@ class ControlPanel extends JPanel {
         newGameButton = new JButton("New Game");
         newGameButton.addActionListener(controlPanelGameAction);
         newGameButton.setFont(mainFont);
-        newGameButton.setBorder(BorderFactory.createBevelBorder(0));
     
         nextGameButton = new JButton("Next Game");
         nextGameButton.addActionListener(controlPanelGameAction);
         nextGameButton.setFont(mainFont);
-        nextGameButton.setBorder(BorderFactory.createBevelBorder(0));
     
         timeRemainingLb = new JLabel(String.valueOf(gamePanel.getTimeRemaining()));
         timeRemainingLb.setBounds(500, 50, 100, 50);

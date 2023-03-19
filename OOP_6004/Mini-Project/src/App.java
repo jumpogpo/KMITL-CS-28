@@ -1,12 +1,10 @@
 package src;
 
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
 
 public class App {
     private final JFrame frame;
-    private ControlPanel controlPanel;
-    private GamePanel gamePanel;
+    private MenuPanel menuPanel;
 
     public App() {
         frame = new JFrame("Match Numbers");
@@ -14,12 +12,9 @@ public class App {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
 
-        gamePanel = new GamePanel();
-        controlPanel = new ControlPanel(gamePanel);
-        gamePanel.settingGame(controlPanel);
+        menuPanel = new MenuPanel(frame);
+        menuPanel.showMenu();
 
-        frame.add(controlPanel, BorderLayout.NORTH);
-        frame.add(gamePanel, BorderLayout.CENTER);
         frame.setVisible(true);
     }
 }

@@ -13,8 +13,8 @@ import javax.swing.JButton;
 import javax.swing.Timer;
 
 public class GameButton extends JButton {
-    private final Font invisibleFont = new Font("Times New Roman", Font.PLAIN, 0);
-    private final Font unInvisibleFont = new Font("Times New Roman", Font.PLAIN, 30);
+    private final Font invisibleFont = new Font("Comic Sans MS", Font.BOLD, 0);
+    private final Font unInvisibleFont = new Font("Comic Sans MS", Font.BOLD, 30);
     private final GameButtonListener gameButtonAction = new GameButtonListener();
     
     private static GameButton buttonOpened = null;
