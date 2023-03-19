@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.Timer;
@@ -33,6 +34,7 @@ public class GameButton extends JButton {
         setPreferredSize(new Dimension(150, 50));
         setFont(invisibleFont);
         addActionListener(gameButtonAction);
+        setBorder(BorderFactory.createBevelBorder(0));
     }
 
     protected void showNumber() {

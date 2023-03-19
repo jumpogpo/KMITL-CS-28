@@ -2,6 +2,7 @@ package src;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.Timer;
@@ -28,10 +29,12 @@ class ControlPanel extends JPanel {
         newGameButton = new JButton("New Game");
         newGameButton.addActionListener(controlPanelGameAction);
         newGameButton.setFont(mainFont);
+        newGameButton.setBorder(BorderFactory.createBevelBorder(0));
     
         nextGameButton = new JButton("Next Game");
         nextGameButton.addActionListener(controlPanelGameAction);
         nextGameButton.setFont(mainFont);
+        nextGameButton.setBorder(BorderFactory.createBevelBorder(0));
     
         timeRemainingLb = new JLabel(String.valueOf(gamePanel.getTimeRemaining()));
         timeRemainingLb.setBounds(500, 50, 100, 50);

@@ -64,6 +64,7 @@ public class GamePanel extends JPanel {
         int randomNumberResult = rand.nextInt(100);
 
         if (usedNumber.contains(randomNumberResult)) return randomNumber();
+        usedNumber.add(randomNumberResult);
         return randomNumberResult;
     }
 
