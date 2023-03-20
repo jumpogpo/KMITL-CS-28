@@ -27,7 +27,7 @@ public class GamePanel extends JPanel {
 
         buttonAmount = 4;
         level = 1;
-        timeRemaining = 60;
+        timeRemaining = 15;
         gameFinish = false;
 
         setLayout(new GridLayout(buttonAmount / 2, buttonAmount / 2));
@@ -108,7 +108,7 @@ public class GamePanel extends JPanel {
         gameFinish = false;
         buttonAmount = 4;
         level = 1;
-        timeRemaining = 60;
+        timeRemaining = 15;
         pauseGame = true;
         createButton();
     }
@@ -116,7 +116,7 @@ public class GamePanel extends JPanel {
     protected void nextGame() {
         this.removeAll();
         gameFinish = false;
-        timeRemaining = 60;
+        timeRemaining = 15;
         pauseGame = true;
         level += 1;
         controlPanel.setLevelLB(level);
