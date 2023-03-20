@@ -1,6 +1,8 @@
 package src;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -28,8 +30,16 @@ public class MenuPanel extends JPanel {
 
     private void removeComponents() {
         frame.getContentPane().removeAll();
-        frame.revalidate();
-        frame.repaint();
+
+        for (Component c : frame.getContentPane().getComponents()) {
+            if (c instanceof ControlPanel) {
+                ((ControlPanel) c).removeAll();
+                ((ControlPanel) c).revalidate();
+            } else if (c instanceof GamePanel) {
+                ((GamePanel) c).removeAll();
+                ((GamePanel) c).revalidate();
+            }
+        }
     }
 
     protected void showMenu() {
@@ -58,8 +68,8 @@ public class MenuPanel extends JPanel {
         removeComponents();
 
         backgroundLB.setIcon(null);
-        gamePanel = new GamePanel(frame);
-        controlPanel = new ControlPanel(gamePanel);
+        gamePanel = new GamePanel(frame, this);
+        controlPanel = new ControlPanel(gamePanel, this);
         gamePanel.settingGame(controlPanel);
 
         frame.setLayout(new BorderLayout());

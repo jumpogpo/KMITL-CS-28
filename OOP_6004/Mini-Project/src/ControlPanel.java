@@ -14,24 +14,23 @@ import java.awt.Dimension;
 import java.awt.Font;
 
 class ControlPanel extends JPanel {
-    private final JButton newGameButton, nextGameButton;
+    private final JButton newGameButton;
     private final JLabel gameLevelLb, timeRemainingLb;
     private final ControlPanelButtonListener controlPanelGameAction;
     private GamePanel gamePanel;
+    private MenuPanel menuPanel;
     private final Font mainFont = new Font("Comic Sans MS", Font.BOLD, 18);
     private Timer countDownTimer;
     
-    public ControlPanel(GamePanel gamePanel) {
+    public ControlPanel(GamePanel gamePanel, MenuPanel menuPanel) {
         this.gamePanel = gamePanel;
+        this.menuPanel = menuPanel;
+
         controlPanelGameAction = new ControlPanelButtonListener();
     
         newGameButton = new JButton("New Game");
         newGameButton.addActionListener(controlPanelGameAction);
         newGameButton.setFont(mainFont);
-    
-        nextGameButton = new JButton("Next Game");
-        nextGameButton.addActionListener(controlPanelGameAction);
-        nextGameButton.setFont(mainFont);
     
         timeRemainingLb = new JLabel(String.valueOf(gamePanel.getTimeRemaining()));
         timeRemainingLb.setBounds(500, 50, 100, 50);
@@ -48,15 +47,14 @@ class ControlPanel extends JPanel {
     
         Box buttonBox = Box.createHorizontalBox();
         buttonBox.add(newGameButton);
-        buttonBox.add(nextGameButton);
     
         Box timeAndLevelBox = Box.createHorizontalBox();
-        timeAndLevelBox.add(Box.createHorizontalStrut(100));
+        timeAndLevelBox.add(Box.createHorizontalStrut(200));
         timeAndLevelBox.add(timeRemainingLb);
         timeAndLevelBox.add(Box.createHorizontalGlue());
         timeAndLevelBox.add(gameLevelLb);
         timeAndLevelBox.add(Box.createHorizontalStrut(20));
-    
+
         add(buttonBox, BorderLayout.WEST);
         add(timeAndLevelBox, BorderLayout.CENTER);
     }
@@ -79,7 +77,11 @@ class ControlPanel extends JPanel {
                     gamePanel.setTimeRemaining(timeRemaining - 1);
                     setTimeRemainingLB(gamePanel.getTimeRemaining());
                 } else {
-                    gamePanel.newGame();
+                    countDownTimer.stop();
+                    gamePanel.setGameFinish(false);
+                    removeAll();
+                    revalidate();
+                    menuPanel.showMenu();
                 }
             }
         });
@@ -93,9 +95,11 @@ class ControlPanel extends JPanel {
             JButton source = (JButton) ev.getSource();
 
             if (source == newGameButton) {
-                gamePanel.newGame();
-                setTimeRemainingLB(gamePanel.getTimeRemaining());
-                setLevelLB(gamePanel.getLevel());
+                countDownTimer.stop();
+                gamePanel.setGameFinish(false);
+                removeAll();
+                revalidate();
+                menuPanel.showMenu();
             } else {
                 if (!gamePanel.getGameFinish()) return;
                 

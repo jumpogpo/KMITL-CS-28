@@ -20,14 +20,16 @@ public class GamePanel extends JPanel {
     private int currentRandNumber;
     private boolean pauseGame, gameFinish;
     private ControlPanel controlPanel;
+    private MenuPanel menuPanel;
 
-    public GamePanel(JFrame frame) {
+    public GamePanel(JFrame frame, MenuPanel menuPanel) {
+        this.menuPanel = menuPanel;
+
         buttonAmount = 4;
         level = 1;
         timeRemaining = 60;
         gameFinish = false;
 
-        setBackground(new java.awt.Color(33, 33, 33));
         setLayout(new GridLayout(buttonAmount / 2, buttonAmount / 2));
     }
 
@@ -41,7 +43,7 @@ public class GamePanel extends JPanel {
         usedNumber.add(currentRandNumber);
 
         for (int i = 1; i < (buttonAmount + 1); i++) {
-            GameButton button = new GameButton(this);
+            GameButton button = new GameButton(this, menuPanel);
             add(button);
             gameButtons.add(button);
         }

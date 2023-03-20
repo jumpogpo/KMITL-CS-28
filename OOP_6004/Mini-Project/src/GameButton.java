@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.GridLayout;
+import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -21,9 +22,11 @@ public class GameButton extends JButton {
     private static int alreadyOpen = 0;
     private static boolean cooldown = false;
     private GamePanel gamePanel;
+    private MenuPanel menuPanel;
 
-    public GameButton(GamePanel gamePanel) {
+    public GameButton(GamePanel gamePanel, MenuPanel menuPanel) {
         this.gamePanel = gamePanel;
+        this.menuPanel = menuPanel;
 
         GridLayout layout = (GridLayout) gamePanel.getLayout();
         int rows = layout.getRows();
@@ -73,6 +76,18 @@ public class GameButton extends JButton {
                         gamePanel.setGameFinish(true);
                         gamePanel.setPauseGame(true);
                         alreadyOpen = 0;
+
+                        int result = JOptionPane.showOptionDialog(null, "If you want to go next level press 'OK'", "Congratulations!!!", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+                        
+                        if (result == JOptionPane.OK_OPTION) {
+                            gamePanel.nextGame();
+                        } else {
+                            gamePanel.setPauseGame(true);
+                            gamePanel.setGameFinish(false);
+                            removeAll();
+                            revalidate();
+                            menuPanel.showMenu();
+                        }
                     }
                 } else {
                     cooldown = true;
