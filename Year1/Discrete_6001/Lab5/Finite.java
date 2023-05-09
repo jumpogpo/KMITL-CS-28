@@ -33,7 +33,12 @@ public class Finite {
 
         for (int i = 0; i < splitInput.length; i++) {
             try {
-                inputArray[i] = Integer.parseInt(splitInput[i]);    
+                inputArray[i] = Integer.parseInt(splitInput[i]); 
+                
+                if (inputArray[i] != 0 && inputArray[i] != 1) {
+                    System.out.println("Invalid input: " + splitInput[i]);
+                    System.exit(0);
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input: " + splitInput[i]);
                 System.exit(0);
@@ -52,11 +57,7 @@ public class Finite {
         }
     }
 
-    public boolean nextStep(int input) {
+    public void nextStep(int input) {
         currentEdges = currentEdges.getNextEdgesList().get(input);
-
-        if (currentEdges.isEnd()) return true;
-
-        return false;
     }
 }
