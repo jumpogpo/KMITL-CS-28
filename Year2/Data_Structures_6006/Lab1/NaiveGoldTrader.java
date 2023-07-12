@@ -7,8 +7,8 @@ public class NaiveGoldTrader {
 
         while(sc.hasNextLine()) {
             String data = sc.nextLine();
-            count++;
             goldPrices[count] = Integer.parseInt(data);
+            count++;
         }
 
         sc.close();
