@@ -1,6 +1,20 @@
 import java.util.Scanner;
 
 public class NaiveGoldTrader {
+    static int readGoldPrices(int goldPrices[]) {
+        int count = 0;
+        Scanner sc = new Scanner(System.in);
+
+        while(sc.hasNextLine()) {
+            String data = sc.nextLine();
+            count++;
+            goldPrices[count] = Integer.parseInt(data);
+        }
+
+        sc.close();
+        return count;
+    } 
+
     static int readGoldPrices(int goldPrices[], int n) {
         for (int i = 0; i < n; i++) {
             goldPrices[i] = (int) Math.round(Math.random() * 20000 + 20000);
@@ -10,9 +24,14 @@ public class NaiveGoldTrader {
 
     public static void main(String args[]) {
         int goldPrices[] = new int[1000000];
-        // int n = readGoldPrices(goldPrices);
-        int n = Integer.parseInt(args[0]);
-        readGoldPrices(goldPrices, n);
+
+        // Solution 1
+        int n = readGoldPrices(goldPrices);
+
+        // Solution 2 *To use uncomment 2 line 32 and 33*
+        // int n = Integer.parseInt(args[0]);
+        // readGoldPrices(goldPrices, n);
+
         int bestBuyDate = 0;
         int bestSellDate = 0;
         int maxProfit = Integer.MIN_VALUE;
