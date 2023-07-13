@@ -1,0 +1,16 @@
+mkdir sub2
+copy sub1\F11.txt sub2\F21.txt
+copy sub1\F12.txt sub2\F22.txt
+copy sub1\sub3\F13.txt sub2\F23.txt
+move sub2\F22.txt sub2\F22.doc
+
+REM 1 relative
+REM 2 relative
+REM 3 relative-relative
+REM 5 relative-relative
+REM 6 absolute
+REM 7 relative-relative
+REM 8 relative-absolute
+
+REM rd /S/Q sub1
+REM del sub2\*.txt

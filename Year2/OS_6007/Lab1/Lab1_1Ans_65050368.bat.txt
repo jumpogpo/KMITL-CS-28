@@ -1,0 +1,13 @@
+REM 65050368 ธนภัทร์ เกิดเปี่ยม
+REM 1.11
+copy sub\test1.txt
+REM 1.12
+copy c:\oslab1\sub\test1.txt test2.txt
+REM 1.13
+md c:\oslab1\abc
+REM 1.16
+del test2.txt
+REM 1.19
+rd /s/q sub
+REM 1.20
+REM c:\Windows\System32S
