@@ -18,7 +18,7 @@ public class ArrayTester {
             }
 
             long avgTime = totalTime / 5;
-            System.out.println(" \t" + avgTime + " \t" + avgTime / N);
+            System.out.println(" \t" + avgTime + " \t" + (float) avgTime / N);
         }
     }
 }
