@@ -1,0 +1,46 @@
+Q1 1)	my copy of i is 1
+	my copy of i is 2
+   2)	my copy of i is 2
+	my copy of i is 1
+   3)	my copy of i is 1
+
+Q2 1)	my copy of i is 1
+	my copy of i is 2
+   2)	my copy of i is 2
+	my copy of i is 1
+
+Q3.	1) 2 ครั้ง
+
+	2) 1 ครั้ง
+
+Q6 เหมือนกัน
+
+Q7.	1) int num_gc = 3;
+
+	2) pidsub = fork();
+
+	3) exit(1);
+
+	4) for(j = 0; j < num_gc;j++){
+       		pidsub = fork();
+          	if(pidsub == 1){
+              		printf("I am grandchild num %d of even child no %d\n",j,i);
+           	}
+      		}
+        	while(wait(NULL) != -1);
+
+	5) int num_gc = 4;
+
+	6) pidsub == 0
+
+	7) exit(1);
+
+	8) exit(0);
+
+	9) ไม่มีจำเป็นที่ต้องมีบรรทัดนั้น
+
+	10) 23 บรรทัด
+
+	11) 22 ตัว
+
+	12) No
