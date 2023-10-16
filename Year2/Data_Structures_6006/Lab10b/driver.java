@@ -30,6 +30,7 @@ public class driver {
     public static void demo2(BST bst) {
         System.out.println("[Demo 2]");
         System.out.println("node with max value " + bst.findMaxFrom(bst.getRoot()));
+        System.out.println();
         demo3(bst);
     }
 
