@@ -7,8 +7,15 @@ public class Main {
         double root1, root2;
 
         System.out.println("Formula:\nAx^2 + bx + c");
-        System.out.print("Please input A: ");
+        System.out.print("Please input a: ");
         a = sc.nextDouble();
+
+        if (a == 0) {
+            System.out.println("a can't be 0");
+            sc.close();
+            return;
+        }
+
         System.out.print("Please input b: ");
         b = sc.nextDouble();
         System.out.print("Please input c: ");
