@@ -27,7 +27,6 @@ public class Main {
  
         if (d > 0) {
             System.out.println("\nRoots are real and different");
- 
             System.out.println((double)(-b + sqrt_val) / (2 * a) + "\n" + (double)(-b - sqrt_val) / (2 * a));
         } else if (d == 0) {
             System.out.println("\nRoots are real and same");
