@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import static java.lang.Math.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,31 +8,33 @@ public class Main {
         System.out.println("Formula:\nAx^2 + bx + c");
         System.out.print("Please input a: ");
         a = sc.nextDouble();
-
-        if (a == 0) {
-            System.out.println("a can't be 0");
-            sc.close();
-            return;
-        }
-
         System.out.print("Please input b: ");
         b = sc.nextDouble();
         System.out.print("Please input c: ");
         c = sc.nextDouble();
         sc.close();
 
-        double d = b * b - 4 * a * c;
-        double sqrt_val = sqrt(abs(d));
- 
-        if (d > 0) {
-            System.out.println("\nRoots are real and different");
-            System.out.println((double)(-b + sqrt_val) / (2 * a) + "\n" + (double)(-b - sqrt_val) / (2 * a));
-        } else if (d == 0) {
-            System.out.println("\nRoots are real and same");
-            System.out.println(-(double)b / (2 * a) + "\n" + -(double)b / (2 * a));
+        if (a != 0) {
+            double d = b * b - 4 * a * c;
+    
+            if (d > 0) {
+                double root1 = (-b + Math.sqrt(d)) / (2 * a);
+                double root2 = (-b - Math.sqrt(d)) / (2 * a);
+                System.out.println("มีสองรากจริง: " + root1 + " และ " + root2);
+            } else if (d == 0) {
+                double root = -b / (2 * a);
+                System.out.println("มีรากเดียว: " + root);
+            } else {
+                double realPart = -b / (2 * a);
+                double imaginaryPart = Math.sqrt(-d) / (2 * a);
+                System.out.println("ไม่มีรากจริง: " + realPart + " + " + imaginaryPart + "i และ " + realPart + " - " + imaginaryPart + "i");
+            }
         } else {
-            System.out.println("\nRoots are complex");
-            System.out.println(-(double)b / (2 * a) + " + i" + sqrt_val / (2 * a) + "\n" + -(double)b / (2 * a) + " - i" + sqrt_val / (2 * a));
+            if (b == 0) {
+                System.out.println("หาคำตอบไม่ได้");
+            } else {
+                System.out.println(-c / b);
+            }
         }
     }
 }

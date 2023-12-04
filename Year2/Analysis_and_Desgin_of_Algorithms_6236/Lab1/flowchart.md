@@ -5,6 +5,7 @@ graph TD
   C -- No --> D[Calculate Discriminant]
   D --> E[Calculate Roots]
   E --> F[Print Results]
-  C -- Yes --> G[Display Error]
-  G --> A
+  C -- Yes --> G{B = 0?}
+  G -- Yes --> H[Display Error]
+  G -- No --> F
 ```
