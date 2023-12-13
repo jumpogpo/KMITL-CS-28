@@ -1,0 +1,8 @@
+=============== Dec 14, 2023 (+07) ===============
+01:59:10.701439 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+01:59:10.714973 db@open opening
+01:59:10.715382 version@stat F·[] S·0B[] Sc·[]
+01:59:10.723010 db@janitor F·2 G·0
+01:59:10.723028 db@open done T·8.037084ms
+02:04:23.883049 db@close closing
+02:04:23.883246 db@close done T·195.75µs

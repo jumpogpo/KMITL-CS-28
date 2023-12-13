@@ -1,0 +1,1 @@
+./geth attach node1/geth.ipc 

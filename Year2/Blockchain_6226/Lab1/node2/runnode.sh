@@ -1,0 +1,1 @@
+./geth --networkid 100 --identity node2 --nodiscover --datadir node2 --http --http.api "web3, eth, personal" --http.corsdomain "*" --vmdebug --"allow-insecure-unlock" --http.port 9545 --port 30305 --ipcpath node2/geth.ipc
