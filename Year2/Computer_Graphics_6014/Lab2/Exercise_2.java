@@ -10,7 +10,7 @@ public class Exercise_2 extends JPanel {
         JFrame f = new JFrame();
 
         f.add(m);
-        f.setTitle("Exercise 2");
+        f.setTitle("Graphics Swing");
         f.setSize(600, 600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
@@ -24,51 +24,34 @@ public class Exercise_2 extends JPanel {
         DDALine(100, 100, 200, 400);
     }
 
-    public void DDALine(int x1,int y1,int x2,int y2){
-        float dx = x2-x1;
-        float dy = y2-y1; 
-        float m = dy/dx;
-        float curY;
-        float curX;
+    private void DDALine(int x1, int y1, int x2, int y2) {
+        float dx = x2 - x1;
+        float dy = y2 - y1;
+        float x = x1;
+        float y = y1;
+        float m = dy / dx;
 
         if (m <= 1 && m >= 0) {
-            if (x2 > x1) curY = y1;
-            else curY = y2;
-
-            for(int x = Math.min(x1, x2); x <= Math.max(x1, x2); x++) {
-                plot(x, Math.round(curY));
-                curY +=m;
+            for (x = x1; x <= x2; x++) {
+                y = y + m;
+                plot((int) x, Math.round(y));
             }
         } else if (m <= -1) {
-            curX = x1;
-
-            if (y1 > y2) curX = x1;
-            else curX = x2;
-
-            for(int y = Math.max(y1, y2); y >= Math.min(y1, y2); y--) {
-                plot(Math.round(curX), y);
-                curX -=1/m;
+            for (x = x1; x >= x2; x--) {
+                y = y + m;
+                plot((int) x, Math.round(y));
             }
         } else if (m > 1) {
-            curX = x1;
-
-            if (y1 > y2) curX = x1;
-            else curX = x2;
-
-            for(int y = Math.max(y1, y2); y >= Math.min(y1, y2); y--) {
-                plot(Math.round(curX), y);
-                curX -=1/m;
+            for (y = y1; y <= y2; y++) {
+                x = x + 1 / m;
+                plot(Math.round(x), (int) y);
             }
-        }else{
-            if (x2 > x1) curY = y1;
-            else curY = y2;
-
-            for(int x = Math.min(x1, x2); x <= Math.max(x1, x2); x++){
-                plot(x, Math.round(curY));
-                curY += m;
+        } else {
+            for (y = y1; y >= y2; y--) {
+                x = x + 1 / m;
+                plot(Math.round(x), (int) y);
             }
         }
-            
     }
 
     private void plot(int x, int y) {

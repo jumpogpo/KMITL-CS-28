@@ -1,0 +1,5 @@
+2) How can we improve DDALine method to be more readable?
+ควรเปลี่ยนจาก if else มาเป็น switch case เพื่อให้อ่านง่ายขึ้น
+
+3) Why the bresenhamLine method should be drawn as the pseudo code above?
+เพราะว่า Bresenham Algorithm เป็นอัลกอริทึมที่ใช้ในการวาดเส้นที่มีความเร็วสูงกว่าการวาดเส้นแบบ Naive Algorithm
