@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <!--script src="web3.min.js"></script-->
+        <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+        <script>
+            var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:9545'))
+            var accounts;
+            async function getAccounts() {
+                try {
+                    accounts = await web3.eth.getAccounts()
+                }
+                 catch (error) {
+                        document.getElementById('accountBalance').innerHTML =  error
+                }
+            }
+            async function accountBalanceByIndex() {
+                index = document.getElementById('index').value;
+                try {
+                    balance = await web3.eth.getBalance(accounts[index])
+                    document.getElementById('accountBalance').innerHTML = web3.utils.fromWei(balance,"ether") + ' ether';
+                }
+                catch (error) {
+                    document.getElementById('accountBalance').innerHTML =  error;
+                }
+            }
+        </script>
+    </head>
+    <body onload ="getAccounts()">
+        <h1>Node 2</h1>
+        <label>Account index: </label>
+        <input type="text" id="index"/>
+        <br>
+        <button type="button" onclick="accountBalanceByIndex()">Account balance</button>
+        <div id="accountBalance"></div>
+    </body>
+</html>

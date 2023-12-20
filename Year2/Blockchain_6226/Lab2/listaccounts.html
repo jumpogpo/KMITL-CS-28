@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <!--script src="web3.min.js"></script-->
+        <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+        <script>
+            var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:9545'))
+            async function listAccounts() {
+                try {
+                    accounts = await web3.eth.getAccounts()
+                    var accountList = '';
+                        for (i = 0; i < accounts.length; i++) {
+				             accountList += '<li>' + accounts[i] + '</li>';
+			            }
+                        document.getElementById('listOfAccounts').innerHTML = '<ol start="0">' + accountList + '</ol>';
+                    }
+                    catch (error) {
+                        document.getElementById('listOfAccounts').innerHTML =  error;
+                    }
+		        }
+        </script>
+    </head>
+    <body>
+        <h1>Node 2</h1>
+        <button type="button" onclick="listAccounts()">List Account</button>
+        <br>
+        <div id="listOfAccounts"></div>
+    </body>
+</html>
