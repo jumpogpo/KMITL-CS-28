@@ -35,3 +35,16 @@
 02:00:11.288403 table@remove removed @5
 02:04:45.715089 db@close closing
 02:04:45.715644 db@close done T·552.958µs
+=============== Dec 20, 2023 (+07) ===============
+13:14:13.240251 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:14:13.241365 version@stat F·[0 1] S·723B[0B 723B] Sc·[0.00 0.00]
+13:14:13.241395 db@open opening
+13:14:13.241598 journal@recovery F·1
+13:14:13.242807 journal@recovery recovering @6
+13:14:13.247485 memdb@flush created L0@9 N·230 S·10KiB "E\x11\xa5..\xb4^\x9e,v245":"unc..own,v247"
+13:14:13.249307 version@stat F·[1 1] S·11KiB[10KiB 723B] Sc·[0.25 0.00]
+13:14:13.268091 db@janitor F·5 G·1
+13:14:13.268102 db@janitor removing table-2
+13:14:13.268192 db@open done T·26.786208ms
+21:15:05.137587 db@close closing
+21:15:05.139370 db@close done T·1.89475ms
