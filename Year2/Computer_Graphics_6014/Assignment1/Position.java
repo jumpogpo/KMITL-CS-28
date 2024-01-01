@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class Position extends JPanel implements MouseListener {
     private BufferedImage backgroundImage;
-    File imageFile = new File("image.png");
+    File imageFile = new File("images.png");
 
     int image_width = 584;
     int image_height = 561;

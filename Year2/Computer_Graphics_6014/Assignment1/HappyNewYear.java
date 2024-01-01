@@ -17,6 +17,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Polygon;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -55,7 +56,322 @@ public class HappyNewYear extends JPanel {
         Color outlineColor = new Color(87, 54, 53);
 
         g2.setColor(backgroundColor);
-        // g2.fillRect(0, 0, 600, 600);
+        g2.fillRect(0, 0, 600, 600);
+
+        /* Snow */
+        g2.setColor(new Color(255, 250, 250));
+        snow(g2, 229, 121);
+        snow(g2, 249, 201);
+        snow(g2, 500, 128);
+        snow(g2, 520, 240);
+        snow(g2, 208, 440);
+        snow(g2, 206, 385);
+        snow(g2, 556, 450);
+        snow(g2, 546, 367);
+        snow(g2, 537, 201);
+        snow(g2, 502, 211);
+        snow(g2, 486, 169);
+        snow(g2, 261, 243);
+        snow(g2, 243, 279);
+        snow(g2, 324, 111);
+
+        /* Letter Two */
+        g2.setColor(new Color(118, 0, 0));
+        drawLetterTwo(g2, 0, 0);
+        drawLetterTwo(g2, 0, 141);
+
+        /* Letter Zero */
+        bezierCurve(g2, 105, 95, 106, 65, 118, 50, 142, 49);
+        bezierCurve(g2, 105, 95, 108, 130, 125, 140, 144, 140);
+        bezierCurve(g2, 142, 49, 165, 45, 180, 74, 178, 90);
+        bezierCurve(g2, 179, 90, 178, 111, 178, 131, 144, 140);
+        bezierCurve(g2, 124, 94, 126, 79, 125, 65, 142, 64);
+        bezierCurve(g2, 124, 94, 124, 103, 123, 120, 142, 124);
+        bezierCurve(g2, 142, 64, 160, 65, 157, 83, 159, 94);
+        bezierCurve(g2, 159, 92, 160, 115, 150, 125, 142, 124);
+
+        bezierCurve(g2, 126, 79, 131, 72, 135, 69, 142, 70);
+        bezierCurve(g2, 157, 79, 153, 74, 150, 70, 142, 70);
+        bezierCurve(g2, 111, 122, 118, 134, 128, 140, 144, 143);
+        bezierCurve(g2, 173, 122, 169, 130, 161, 137, 144, 143);
+
+        /* Letter Four */
+        int xPoly[] = {146, 121, 146};
+        int yPoly[] = {212, 246, 248};
+        Polygon poly = new Polygon(xPoly, yPoly, xPoly.length);
+        g2.drawPolygon(poly);
+
+        bresenhamLine(g2, 140, 190, 102, 248);
+        bresenhamLine(g2, 140, 190, 165, 190);
+        bresenhamLine(g2, 164, 191, 164, 250);
+        bresenhamLine(g2, 103, 247, 103, 267);
+        bresenhamLine(g2, 164, 247, 177, 247);
+        bresenhamLine(g2, 175, 247, 175, 267);
+        bresenhamLine(g2, 103, 266, 147, 266);
+        bresenhamLine(g2, 146, 263, 146, 282);
+        bresenhamLine(g2, 175, 266, 162, 266);
+        bresenhamLine(g2, 146, 281, 166, 281);
+        bresenhamLine(g2, 164, 262, 164, 282);
+        bresenhamLine(g2, 103, 262, 147, 262);
+        bresenhamLine(g2, 164, 262, 176, 262);
+
+        /* Gift Box 6 */
+        g2.setColor(new Color(249, 179, 23));
+        bresenhamLine(g2, 131, 473, 192, 473);
+        bresenhamLine(g2, 129, 483, 145, 483);
+        bresenhamLine(g2, 155, 483, 165, 483);
+        bresenhamLine(g2, 170, 483, 192, 483);
+        bresenhamLine(g2, 191, 473, 191, 485);
+        bresenhamLine(g2, 184, 483, 184, 495);
+        bresenhamLine(g2, 184, 501, 184, 508);
+
+        g2.setColor(new Color(250, 79, 66));
+        bresenhamLine(g2, 144, 474, 144, 489);
+        bresenhamLine(g2, 155, 474, 155, 489);
+        bresenhamLine(g2, 155, 495, 155, 507);
+        bresenhamLine(g2, 144, 502, 144, 508);
+
+        g2.setColor(new Color(246, 157, 15));
+        bresenhamLine(g2, 129, 486, 145, 486);
+        bresenhamLine(g2, 155, 486, 165, 486);
+        bresenhamLine(g2, 168, 486, 186, 486);
+
+        g2.setColor(new Color(249, 86, 73));
+        bezierCurve(g2, 140, 473, 132, 468, 120, 463, 136, 455);
+        bezierCurve(g2, 145, 472, 138, 466, 135, 462, 135, 455);
+        bezierCurve(g2, 144, 471, 158, 450, 169, 453, 171, 462);
+        bezierCurve(g2, 149, 473, 157, 464, 165, 461, 170, 463);
+        bresenhamLine(g2, 147, 464, 139, 468);
+
+        g2.setColor(new Color(211, 19, 16));
+        bezierCurve(g2, 159, 473, 163, 470, 167, 467, 171, 463);
+        bezierCurve(g2, 157, 472, 162, 468, 164, 465, 164, 462);
+        bezierCurve(g2, 136, 455, 141, 455, 144, 459, 147, 464);
+
+        /* Gift Box 5 */
+        g2.setColor(new Color(253, 63, 49));
+        bresenhamLine(g2, 59, 468, 59, 481);
+        bresenhamLine(g2, 59, 480, 64, 480);
+        bresenhamLine(g2, 63, 480, 63, 525);
+        bresenhamLine(g2, 59, 468, 132, 468);
+        bresenhamLine(g2, 130, 468, 130, 480);
+        bresenhamLine(g2, 128, 479, 132, 479);
+        bresenhamLine(g2, 128, 478, 128, 505);
+        bresenhamLine(g2, 63, 480, 70, 480);
+        bresenhamLine(g2, 74, 480, 90, 480);
+        bresenhamLine(g2, 98, 480, 105, 480);
+        bresenhamLine(g2, 103, 468, 103, 483);
+        bresenhamLine(g2, 111, 468, 111, 482);
+        bresenhamLine(g2, 111, 495, 111, 503);
+        bresenhamLine(g2, 82, 469, 82, 491);
+        bresenhamLine(g2, 82, 501, 82, 507);
+
+        g2.setColor(new Color(205, 35, 28));
+        bresenhamLine(g2, 63, 483, 70, 483);
+        bresenhamLine(g2, 74, 483, 88, 483);
+        bresenhamLine(g2, 120, 483, 129, 483);
+
+        g2.setColor(new Color(253, 221, 62));
+        bresenhamLine(g2, 69, 468, 69, 507);
+        bresenhamLine(g2, 74, 468, 74, 507);
+
+        g2.setColor(new Color(252, 184, 40));
+        bezierCurve(g2, 83, 467, 70, 462, 75, 457, 81, 453);
+        bezierCurve(g2, 92, 467, 86, 462, 82, 457, 82, 453);
+        bezierCurve(g2, 94, 467, 102, 462, 107, 457, 111, 453);
+        bezierCurve(g2, 106, 467, 119, 461, 120, 458, 117, 453);
+
+        g2.setColor(new Color(189, 117, 11));
+        bezierCurve(g2, 94, 468, 93, 461, 90, 456, 82, 452);
+        bezierCurve(g2, 94, 464, 98, 458, 101, 453, 116, 453);
+
+        /* Gift Box 4 */
+        g2.setColor(new Color(250, 148, 54));
+        bresenhamLine(g2, 6, 478, 60, 478);
+        bresenhamLine(g2, 6, 478, 6, 490);
+        bresenhamLine(g2, 6, 489, 11, 489);
+        bresenhamLine(g2, 9, 490, 9, 525);
+
+        bresenhamLine(g2, 9, 492, 35, 492);
+        bresenhamLine(g2, 40, 492, 64, 492);
+
+        bresenhamLine(g2, 34, 478, 34, 509);
+        bresenhamLine(g2, 39, 478, 39, 501);
+
+        bresenhamLine(g2, 10, 489, 35, 489);
+        bresenhamLine(g2, 38, 489, 64, 489);
+
+        g2.setColor(new Color(149, 199, 34));
+        bezierCurve(g2, 34, 478, 30, 478, 25, 481, 21, 487);
+        bezierCurve(g2, 36, 476, 31, 473, 25, 475, 16, 487);
+        bezierCurve(g2, 25, 476, 21, 472, 18, 468, 27, 462);
+        bezierCurve(g2, 27, 475, 23, 469,22, 464, 24, 464);
+        bezierCurve(g2, 37, 475, 34, 460, 29, 464, 22, 468);
+        bezierCurve(g2, 38, 469, 34, 464, 29, 462, 23, 465);
+        bezierCurve(g2, 38, 469, 41, 463, 45, 461, 53, 462);
+        bezierCurve(g2, 39, 474, 40, 471, 45, 465, 52, 463);
+        bezierCurve(g2, 53, 462, 55, 469, 52, 474, 49, 477);
+        bezierCurve(g2, 46, 475, 49, 471, 52, 467, 53, 463);
+        bezierCurve(g2, 39, 478, 45, 477, 48, 482, 51, 489);
+        bezierCurve(g2, 38, 475, 44, 473, 54, 483, 55, 489);
+        bresenhamLine(g2, 16, 484, 22, 488);
+
+        /* Gift Box 3 */
+        g2.setColor(new Color(60, 88, 204));
+        bresenhamLine(g2, 141, 507, 197, 507);
+        bresenhamLine(g2, 195, 507, 195, 521);
+        bresenhamLine(g2, 195, 520, 192, 520);
+        bresenhamLine(g2, 194, 519, 194, 562);
+        bresenhamLine(g2, 193, 519, 162, 519);
+        bresenhamLine(g2, 134, 519, 160, 519);
+        bresenhamLine(g2, 194, 523, 162, 523);
+        bresenhamLine(g2, 134, 523, 160, 523);
+        bresenhamLine(g2, 159, 507, 159, 562);
+        bresenhamLine(g2, 163, 507, 163, 562);
+        bresenhamLine(g2, 193, 561, 133, 561);
+        bresenhamLine(g2, 194, 546, 185, 562);
+        bresenhamLine(g2, 194, 532, 175, 562);
+        bresenhamLine(g2, 194, 519, 165, 562);
+        bresenhamLine(g2, 193, 507, 163, 549);   
+        bresenhamLine(g2, 156, 507, 134, 537);
+        bresenhamLine(g2, 159, 520, 133, 555);
+        bresenhamLine(g2, 147, 507, 134, 525);
+        bresenhamLine(g2, 184, 508, 162, 536);
+        bresenhamLine(g2, 172, 508, 163, 520);
+        bresenhamLine(g2, 159, 550, 151, 562);
+        bresenhamLine(g2, 159, 536, 139, 562);
+
+        g2.setColor(new Color(105, 215, 248));
+        bezierCurve(g2, 162, 503, 167, 498, 172, 497, 180, 495);
+        bezierCurve(g2, 163, 506, 166, 503, 169, 502, 176, 501);
+        bresenhamLine(g2, 166, 481, 171, 484);
+        bresenhamLine(g2, 184, 495, 193, 496);
+        bresenhamLine(g2, 183, 499, 191, 501);
+        bresenhamLine(g2, 192, 496, 187, 503);
+        bezierCurve(g2, 159, 508, 159, 501, 155, 495, 142, 491);
+        bezierCurve(g2, 162, 506, 161, 495, 156, 486, 148, 488);
+        bezierCurve(g2, 159, 492, 161, 488, 164, 483, 167, 481);
+        bezierCurve(g2, 162, 493, 164, 489, 168, 486, 171, 483);
+        bezierCurve(g2, 161, 496, 165, 489, 172, 480, 182, 492);
+        bezierCurve(g2, 162, 499, 170, 492, 174, 489, 182, 493); 
+        
+        g2.setColor(new Color(28, 156, 202));
+        bezierCurve(g2, 152, 508, 140, 501, 140, 493, 147, 488);
+        bezierCurve(g2, 157, 508, 149, 501, 145, 496, 144, 490);
+        bezierCurve(g2, 167, 507, 176, 501, 183, 496, 182, 493);
+        bezierCurve(g2, 175, 508, 182, 502, 184, 496, 183, 493);
+
+        /* Gift Box 2 */
+        g2.setColor(new Color(250, 112, 110));
+        bresenhamLine(g2, 73, 491, 78, 484);
+        bezierCurve(g2, 88, 504, 81, 500, 76, 496, 72, 492);
+        bezierCurve(g2, 100, 505, 89, 498, 81, 491, 77, 485);
+
+        bezierCurve(g2, 93, 479, 105, 486, 106, 495, 101, 505);
+        bezierCurve(g2, 93, 479, 101, 479, 106, 484, 106, 496);
+        bezierCurve(g2, 104, 505, 113, 490, 122, 488, 129, 492);
+        bezierCurve(g2, 106, 495, 113, 489, 123, 480, 129, 492);
+        bezierCurve(g2, 115, 487, 120, 482, 123, 482, 128, 479);
+        bezierCurve(g2, 105, 491, 110, 482, 119, 475, 124, 473);
+        bresenhamLine(g2, 124, 473, 128, 480);
+
+        g2.setColor(new Color(220, 51, 47));
+        bezierCurve(g2, 90, 497, 86, 487, 87, 481, 93, 479);
+        bezierCurve(g2, 100, 505, 95, 496, 92, 486, 93, 479);
+        bezierCurve(g2, 117, 505, 125, 499, 129, 495, 129, 492);
+        bezierCurve(g2, 104, 505, 117, 499, 125, 493, 129, 492);
+
+        g2.setColor(new Color(143, 200, 22));
+        bresenhamLine(g2, 141, 517, 141, 503);
+        bresenhamLine(g2, 134, 517, 134, 562);
+        bresenhamLine(g2, 70, 561, 136, 561);
+        bresenhamLine(g2, 64, 517, 64, 503);
+        bresenhamLine(g2, 65, 517, 80, 517);
+        bresenhamLine(g2, 83, 517, 113, 517);
+        bresenhamLine(g2, 141, 504, 63, 506);
+        bresenhamLine(g2, 116, 517, 143, 517);
+        bresenhamLine(g2, 71, 517, 71, 562);
+
+        g2.setColor(new Color(140, 188, 13));
+        bresenhamLine(g2, 71, 521, 80, 521);
+        bresenhamLine(g2, 83, 521, 113, 521);
+        bresenhamLine(g2, 116, 521, 135, 521);
+
+        g2.setColor(new Color(253, 113, 119));
+        bresenhamLine(g2, 78, 506, 78, 562);
+        bresenhamLine(g2, 82, 506, 82, 562);
+
+        g2.setColor(new Color(216, 82, 78));
+        bresenhamLine(g2, 111, 505, 111, 562);
+        bresenhamLine(g2, 116, 505, 116, 562);
+
+        g2.setColor(new Color(141, 198, 17));
+        bresenhamLine(g2, 91, 506, 91, 562);
+
+        /* Gift Box 1 */
+        g2.setColor(new Color(170, 58, 232));
+        bezierCurve(g2, 30, 523, 22, 519, 15, 515, 13, 508);
+        bezierCurve(g2, 34, 522, 26, 517, 19, 512, 16, 506);
+        bezierCurve(g2, 46, 523, 55, 517, 61, 514, 63, 509);
+        bezierCurve(g2, 58, 503, 64, 504, 62, 507, 63, 509);
+        bezierCurve(g2, 42, 523, 53, 516, 56, 512, 60, 505);
+
+        g2.setColor(new Color(198, 142, 218));
+        bezierCurve(g2, 13, 508, 15, 507, 24, 495, 37, 515);
+        bezierCurve(g2, 35, 523, 34, 516, 25, 505, 18, 505);
+        bezierCurve(g2, 35, 512, 35, 508, 40, 501, 48, 492);
+        bezierCurve(g2, 38, 513, 40, 508, 43, 503, 49, 495);
+        bezierCurve(g2, 37, 515, 43, 506, 51, 501, 58, 502);
+        bezierCurve(g2, 40, 523, 40, 513, 49, 502, 63, 507);
+        bresenhamLine(g2, 47, 492, 50, 496);
+
+        g2.setColor(new Color(250, 112, 108));
+        bresenhamLine(g2, 0, 524, 72, 524);
+        bresenhamLine(g2, 0, 532, 12, 532);
+        bresenhamLine(g2, 16, 532, 54, 532);
+        bresenhamLine(g2, 58, 532, 72, 532);
+        bresenhamLine(g2, 0, 561, 73, 561);
+
+        bresenhamLine(g2, 2, 532, 2, 562);
+        bresenhamLine(g2, 27, 525, 27, 562);
+
+        g2.setColor(new Color(214, 9, 10));
+        bresenhamLine(g2, 2, 535, 12, 535);
+        bresenhamLine(g2, 16, 535, 53, 535);
+        bresenhamLine(g2, 58, 535, 72, 535);
+
+        g2.setColor(new Color(210, 152, 228));
+        bresenhamLine(g2, 11, 524, 11, 562);
+        bresenhamLine(g2, 15, 524, 15, 562);
+
+        g2.setColor(new Color(163, 52, 211));
+        bresenhamLine(g2, 52, 524, 52, 562);
+        bresenhamLine(g2, 57, 524, 57, 562);
+
+        /* Star */
+        g2.setColor(new Color(207, 58, 28));
+        bresenhamLine(g2, 377, 141, 359, 149);
+        bresenhamLine(g2, 361, 147, 365, 126);
+        bresenhamLine(g2, 365, 127, 350, 112);
+        bresenhamLine(g2, 352, 113, 373, 111);
+        bresenhamLine(g2, 372, 111, 381, 95);
+        bresenhamLine(g2, 380, 96, 389, 112);
+        bresenhamLine(g2, 388, 111, 409, 114);
+        bresenhamLine(g2, 408, 114, 392, 130);
+        bresenhamLine(g2, 394, 128, 397, 147);
+        bresenhamLine(g2, 397, 147, 382, 139);
+        bezierCurve(g2, 373, 158, 377, 153, 377, 145, 377, 141);
+        bezierCurve(g2, 389, 153, 388, 150, 386, 146, 385, 140);
+
+        g2.setColor(new Color(255, 212, 0));
+        bresenhamLine(g2, 356, 136, 345, 145);
+        bresenhamLine(g2, 347, 122, 339, 121);
+        bresenhamLine(g2, 356, 104, 348, 98);
+        bresenhamLine(g2, 369, 99, 366, 91);
+        bresenhamLine(g2, 393, 106, 401, 95);
+        bresenhamLine(g2, 409, 109, 417, 105);
+        bresenhamLine(g2, 403, 126, 419, 130);
+        bresenhamLine(g2, 404, 137, 413, 143);
 
         /* Cat 16 */
         g2.setColor(new Color(127, 141, 141));
@@ -91,16 +407,19 @@ public class HappyNewYear extends JPanel {
         bezierCurve(g2, 398, 180, 403, 177, 407, 176, 412, 176);
         bezierCurve(g2, 400, 183, 403, 182, 407, 180, 415, 180);
 
-        drawNose(g2, 379, 180);
-        bezierCurve(g2, 374, 182, 377, 195, 382, 185, 382, 181);
-        bezierCurve(g2, 381, 185, 385, 189, 389, 187, 389, 181);
-
         bezierCurve(g2, 365, 177, 366, 175, 368, 175, 370, 177);
         bezierCurve(g2, 390, 176, 392, 175, 394, 175, 395, 177);
         
         g2.setColor(new Color(247, 167, 163));
         drawCheek(g2, 359, 185, 6);
         drawCheek(g2, 390, 184, 6);
+
+        g2.setColor(new Color(140, 141, 125));
+        bezierCurve(g2, 374, 182, 377, 195, 382, 185, 382, 181);
+        bezierCurve(g2, 381, 185, 385, 189, 389, 187, 389, 181);
+
+        g2.setColor(new Color(41, 45, 51));
+        drawNose(g2, 379, 180);
 
         /* Cat 15 */
         g2.setColor(outlineColor);
@@ -958,6 +1277,181 @@ public class HappyNewYear extends JPanel {
         floodfill(buffer, 410, 192, backgroundColor, new Color(127, 141, 141));
         floodfill(buffer, 366, 184, backgroundColor, new Color(247, 167, 163));
         floodfill(buffer, 396, 185, backgroundColor, new Color(247, 167, 163));
+        floodfill(buffer, 381, 179, backgroundColor, new Color(41, 45, 51));
+
+        /* Star */
+        floodfill(buffer, 383, 123, backgroundColor, new Color(255, 212, 0));
+
+        /* Gift Box 1 */
+        floodfill(buffer, 6, 546, backgroundColor, new Color(250, 112, 108));
+        floodfill(buffer, 21, 546, backgroundColor, new Color(250, 112, 108));
+        floodfill(buffer, 4, 528, backgroundColor, new Color(250, 112, 108));
+        floodfill(buffer, 20, 529, backgroundColor, new Color(250, 112, 108));
+        floodfill(buffer, 41, 530, backgroundColor, new Color(249, 119, 117));
+        floodfill(buffer, 65, 528, backgroundColor, new Color(249, 119, 117));
+        floodfill(buffer, 38, 545, backgroundColor, new Color(250, 84, 76));
+        floodfill(buffer, 64, 547, backgroundColor, new Color(250, 84, 76));
+        floodfill(buffer, 13, 543, backgroundColor, new Color(210, 152, 228));
+        floodfill(buffer, 54, 543, backgroundColor, new Color(163, 52, 211));
+        floodfill(buffer, 45, 533, backgroundColor, new Color(214, 9, 10));
+        floodfill(buffer, 65, 533, backgroundColor, new Color(214, 9, 10));
+        floodfill(buffer, 21, 533, backgroundColor, new Color(214, 9, 10));
+        floodfill(buffer, 8, 533, backgroundColor, new Color(214, 9, 10));
+        floodfill(buffer, 23, 518, backgroundColor, new Color(170, 58, 232));
+        floodfill(buffer, 58, 513, backgroundColor, new Color(170, 58, 232));
+        floodfill(buffer, 37, 509, backgroundColor, new Color(198, 142, 218));
+        floodfill(buffer, 37, 519, backgroundColor, new Color(198, 142, 218));
+        floodfill(buffer, 27, 512, backgroundColor, new Color(250, 148, 54));
+
+        /* Gift Box 2 */
+        floodfill(buffer, 81, 536, backgroundColor, new Color(253, 113, 119));
+        floodfill(buffer, 114, 529, backgroundColor, new Color(216, 82, 78));
+        floodfill(buffer, 74, 537, backgroundColor, new Color(176, 219, 50));
+        floodfill(buffer, 72, 513, backgroundColor, new Color(176, 219, 50));
+        floodfill(buffer, 86, 542, backgroundColor, new Color(176, 219, 50));
+        floodfill(buffer, 86, 511, backgroundColor, new Color(176, 219, 50));
+        floodfill(buffer, 102, 540, backgroundColor, new Color(143, 200, 22));
+        floodfill(buffer, 101, 511, backgroundColor, new Color(143, 200, 22));
+        floodfill(buffer, 127, 537, backgroundColor, new Color(143, 200, 22));
+        floodfill(buffer, 128, 514, backgroundColor, new Color(143, 200, 22));
+        floodfill(buffer, 79, 495, backgroundColor, new Color(250, 112, 110));
+        floodfill(buffer, 103, 488, backgroundColor, new Color(250, 112, 110));
+        floodfill(buffer, 118, 482, backgroundColor, new Color(250, 112, 110));
+        floodfill(buffer, 89, 489, backgroundColor, new Color(220, 51, 47));
+        floodfill(buffer, 120, 500, backgroundColor, new Color(220, 51, 47));
+        floodfill(buffer, 74, 519, backgroundColor, new Color(140, 188, 13));
+        floodfill(buffer, 87, 519, backgroundColor, new Color(140, 188, 13));
+        floodfill(buffer, 100, 518, backgroundColor, new Color(95, 156, 0));
+        floodfill(buffer, 125, 519, backgroundColor, new Color(95, 156, 0));
+
+        /* Gift Box 3 */
+        floodfill(buffer, 161, 533, backgroundColor, new Color(73, 192, 236));
+        floodfill(buffer, 191, 557, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 180, 545, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 172, 530, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 155, 557, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 147, 540, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 140, 526, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 185, 513, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 167, 513, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 148, 515, backgroundColor, new Color(129, 147, 229));
+        floodfill(buffer, 187, 550, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 175, 537, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 167, 524, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 150, 549, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 144, 530, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 192, 514, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 175, 513, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 155, 515, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 143, 510, backgroundColor, new Color(60, 88, 204));
+        floodfill(buffer, 179, 520, backgroundColor, new Color(101, 121, 207));
+        floodfill(buffer, 144, 521, backgroundColor, new Color(101, 121, 207));
+        floodfill(buffer, 185, 520, backgroundColor, new Color(27, 48, 166));
+        floodfill(buffer, 169, 520, backgroundColor, new Color(27, 48, 166));
+        floodfill(buffer, 150, 520, backgroundColor, new Color(27, 48, 166));
+        floodfill(buffer, 135, 521, backgroundColor, new Color(27, 48, 166));
+        floodfill(buffer, 148, 503, backgroundColor, new Color(28, 156, 202));
+        floodfill(buffer, 176, 505, backgroundColor, new Color(28, 156, 202));
+        floodfill(buffer, 155, 492, backgroundColor, new Color(105, 215, 248));
+        floodfill(buffer, 163, 488, backgroundColor, new Color(105, 215, 248));
+        floodfill(buffer, 168, 492, backgroundColor, new Color(105, 215, 248));
+        floodfill(buffer, 172, 500, backgroundColor, new Color(105, 215, 248));
+        floodfill(buffer, 187, 498, backgroundColor, new Color(105, 215, 248));
+
+        /* Gift Box 4 */
+        floodfill(buffer, 11, 484, backgroundColor, new Color(250, 172, 84));
+        floodfill(buffer, 45, 484, backgroundColor, new Color(250, 172, 84));
+        floodfill(buffer, 57, 483, backgroundColor, new Color(250, 172, 84));
+        floodfill(buffer, 26, 500, backgroundColor, new Color(250, 148, 54));
+        floodfill(buffer, 51, 499, backgroundColor, new Color(250, 148, 54));
+        floodfill(buffer, 43, 493, backgroundColor, new Color(250, 148, 54));
+        floodfill(buffer, 53, 508, backgroundColor, new Color(250, 148, 54));
+        floodfill(buffer, 58, 521, backgroundColor, new Color(250, 148, 54));
+        floodfill(buffer, 24, 490, backgroundColor, new Color(239, 93, 16));
+        floodfill(buffer, 46, 490, backgroundColor, new Color(239, 93, 16));
+        floodfill(buffer, 37, 487, backgroundColor, new Color(148, 198, 33));
+        floodfill(buffer, 19, 484, backgroundColor, new Color(149, 199, 34));
+        floodfill(buffer, 52, 485, backgroundColor, new Color(149, 199, 34));
+        floodfill(buffer, 37, 470, backgroundColor, new Color(149, 199, 34));
+        floodfill(buffer, 49, 474, backgroundColor, new Color(149, 199, 34));
+        floodfill(buffer, 24, 473, backgroundColor, new Color(102, 148, 10));
+        floodfill(buffer, 32, 475, backgroundColor, new Color(133, 191, 23));
+
+        /* Gift Box 5 */
+        floodfill(buffer, 65, 474, backgroundColor, new Color(252, 113, 99));
+        floodfill(buffer, 77, 474, backgroundColor, new Color(253, 113, 99));
+        floodfill(buffer, 67, 492, backgroundColor, new Color(253, 63, 49));
+        floodfill(buffer, 67, 522, backgroundColor, new Color(253, 63, 49));
+        floodfill(buffer, 77, 503, backgroundColor, new Color(253, 63, 49));
+        floodfill(buffer, 78, 483, backgroundColor, new Color(253, 63, 49));
+        floodfill(buffer, 87, 475, backgroundColor, new Color(225, 42, 32));
+        floodfill(buffer, 84, 504, backgroundColor, new Color(225, 42, 32));
+        floodfill(buffer, 115, 472, backgroundColor, new Color(225, 42, 32));
+        floodfill(buffer, 72, 485, backgroundColor, new Color(253, 221, 62));
+        floodfill(buffer, 107, 477, backgroundColor, new Color(253, 221, 62));
+        floodfill(buffer, 108, 501, backgroundColor, new Color(253, 221, 62));
+        floodfill(buffer, 66, 482, backgroundColor, new Color(205, 35, 28));
+        floodfill(buffer, 77, 482, backgroundColor, new Color(205, 35, 28));
+        floodfill(buffer, 84, 482, backgroundColor, new Color(205, 35, 28));
+        floodfill(buffer, 126, 482, backgroundColor, new Color(205, 35, 28));
+        floodfill(buffer, 82, 463, backgroundColor, new Color(252, 184, 40));
+        floodfill(buffer, 113, 461, backgroundColor, new Color(252, 184, 40));
+        floodfill(buffer, 88, 458, backgroundColor, new Color(189, 117, 11));
+        floodfill(buffer, 102, 458, backgroundColor, new Color(189, 117, 11));
+
+        /* Gift Box 6 */
+        floodfill(buffer, 136, 480, backgroundColor, new Color(249, 201, 67));
+        floodfill(buffer, 172, 479, backgroundColor, new Color(249, 201, 67));
+        floodfill(buffer, 135, 493, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 182, 504, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 174, 494, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 166, 506, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 158, 486, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 156, 502, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 182, 487, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 156, 489, backgroundColor, new Color(249, 179, 23));
+        floodfill(buffer, 150, 497, backgroundColor, new Color(250, 79, 66));
+        floodfill(buffer, 149, 481, backgroundColor, new Color(250, 79, 66));
+        floodfill(buffer, 146, 505, backgroundColor, new Color(250, 79, 66));
+        floodfill(buffer, 180, 485, backgroundColor, new Color(246, 157, 15));
+        floodfill(buffer, 158, 485, backgroundColor, new Color(246, 157, 15));
+        floodfill(buffer, 133, 485, backgroundColor, new Color(246, 157, 15));
+        floodfill(buffer, 135, 467, backgroundColor, new Color(249, 86, 73));
+        floodfill(buffer, 157, 461, backgroundColor, new Color(249, 86, 73));
+        floodfill(buffer, 141, 463, backgroundColor, new Color(211, 19, 16));
+        floodfill(buffer, 165, 465, backgroundColor, new Color(211, 19, 16));
+
+        /* Letter Two */
+        floodfill(buffer, 62, 130, backgroundColor, new Color(253, 244, 40));
+        floodfill(buffer, 62, 272, backgroundColor, new Color(253, 244, 40));
+        floodfill(buffer, 58, 66, backgroundColor, new Color(118, 0, 0));
+        floodfill(buffer, 58, 207, backgroundColor, new Color(118, 0, 0));
+        floodfill(buffer, 58, 140, backgroundColor, new Color(118, 0, 0));
+        floodfill(buffer, 58, 281, backgroundColor, new Color(118, 0, 0));
+
+        /* Letter Zerro */
+        floodfill(buffer, 141, 58, backgroundColor, new Color(253, 244, 40));
+        floodfill(buffer, 142, 66, backgroundColor, new Color(118, 0, 0));
+        floodfill(buffer, 141, 141, backgroundColor, new Color(118, 0, 0));
+
+        /* Letter Four */
+        floodfill(buffer, 134, 257, backgroundColor, new Color(253, 244, 40));
+
+        /* Snow */
+        floodfill(buffer, 230, 121, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 250, 201, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 501, 128, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 521, 240, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 209, 440, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 207, 385, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 557, 450, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 547, 367, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 538, 201, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 503, 212, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 487, 169, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 262, 243, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 244, 279, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 325, 111, backgroundColor, new Color(255, 250, 250));
 
         /* Draw */
         g.drawImage(buffer, 0, 0, null);
@@ -1097,62 +1591,29 @@ public class HappyNewYear extends JPanel {
         bezierCurve(g2, x, y, x + controlPoint1Offset, y + controlPoint1Offset, x + controlPoint2Offset,
                 y + controlPoint2Offset, x + 2 * controlPoint2Offset, y);
     }
+
+    private void drawLetterTwo(Graphics g2, int x, int y) {
+        bezierCurve(g2, x + 27, y + 76, x + 30, y + 55, x + 47, y + 49, x + 60, y + 48);
+        bezierCurve(g2, x + 60, y + 48, x + 85, y + 53, x + 90, y + 63, x + 91, y + 76);
+        bezierCurve(g2, x + 44, y + 76, x + 47, y + 68, x + 52, y + 64, x + 59, y + 63);
+        bezierCurve(g2, x + 59, y + 63, x + 70, y + 66, x + 71, y + 71, x + 73, y + 75);
+        bezierCurve(g2, x + 72, y + 73, x + 80, y + 82, x + 46, y + 107, x + 28, y + 124);
+        bezierCurve(g2, x + 91, y + 73, x + 94, y + 87, x + 76, y + 102, x + 54, y + 121);
+        bresenhamLine(g2, x + 27, y + 76, x + 46, y + 76);
+        bresenhamLine(g2, x + 28, y + 124, x + 28, y + 143);
+        bresenhamLine(g2, x + 28, y + 136, x + 93, y + 136);
+        bresenhamLine(g2, x + 53, y + 122, x + 93, y + 122);
+        bresenhamLine(g2, x + 92, y + 121, x + 92, y + 143);
+    
+        bresenhamLine(g2, x + 28, y + 142, x + 93, y + 142);
+        bezierCurve(g2, x + 45, y + 76, x + 49, y + 71, x + 52, y + 68, x + 58, y + 67);
+        bezierCurve(g2, x + 57, y + 67, x + 64, y + 67, x + 67, y + 70, x + 73, y + 74);
+    }
+
+    private void snow(Graphics g2, int x, int y) {
+        bezierCurve(g2, x, y, x, y - 1, x + 1, y - 3, x + 6, y - 4);
+        bezierCurve(g2, x, y, x, y + 3, x + 2, y + 5, x + 6, y + 4);
+        bezierCurve(g2, x + 9, y, x + 9, y - 1, x + 8, y - 3, x + 7, y - 4);
+        bezierCurve(g2, x + 9, y, x + 9, y + 3, x + 8, y + 5, x + 7, y + 4);
+    }
 }
-
-        // /* Gift Box 1 */
-        // g2.setColor(new Color(249, 180, 76));
-        // bresenhamLine(g2, 10, 449, 10, 505);
-        // bresenhamLine(g2, 10, 504, -2, 504);
-        // bresenhamLine(g2, 18, 449, 18, 505);
-        // bresenhamLine(g2, 18, 504, 34, 504);
-        // bresenhamLine(g2, 0, 514, 11, 514);
-        // bresenhamLine(g2, 10, 514, 10, 601);
-        // bresenhamLine(g2, 18, 514, 34, 514);
-        // bresenhamLine(g2, 18, 514, 18, 601);
-
-        // g2.setColor(Color.BLACK);
-        // bresenhamLine(g2, 0, 449, 39, 449);
-        // bresenhamLine(g2, 38, 449, 38, 498);
-
-        // /* Gift Box 2 */
-        // bresenhamLine(g2, 66, 497, 66, 528);
-        // bresenhamLine(g2, 66, 527, 32, 527);
-        // bresenhamLine(g2, 66, 537, 32, 537);
-        // bresenhamLine(g2, 66, 537, 66, 601);
-        // bresenhamLine(g2, 75, 497, 75, 528);
-        // bresenhamLine(g2, 75, 527, 106, 527);
-        // bresenhamLine(g2, 75, 537, 106, 537);
-        // bresenhamLine(g2, 75, 537, 75, 601);
-
-        // bresenhamLine(g2, 33, 497, 106, 497);
-        // bresenhamLine(g2, 33, 497, 33, 601);
-
-        // /* Gift Box 3 */
-        // g2.setColor(new Color(172, 243, 55));
-        // bresenhamLine(g2, 134, 449, 134, 502);
-        // bresenhamLine(g2, 134, 501, 104, 501);
-        // bresenhamLine(g2, 142, 449, 142, 502);
-        // bresenhamLine(g2, 142, 501, 171, 501);
-        // bresenhamLine(g2, 105, 510, 135, 510);
-        // bresenhamLine(g2, 134, 510, 134, 601);
-        // bresenhamLine(g2, 142, 510, 171, 510);
-        // bresenhamLine(g2, 142, 510, 142, 601);
-
-        // g2.setColor(Color.BLACK);
-        // bresenhamLine(g2, 105, 449, 171, 449);
-        // bresenhamLine(g2, 105, 449, 105, 600);
-        // bresenhamLine(g2, 170, 449, 170, 514);
-
-        // /* Gift Box 4 */
-        // bresenhamLine(g2, 174, 514, 174, 533);
-        // bresenhamLine(g2, 174, 532, 149, 532);
-        // bresenhamLine(g2, 174, 539, 149, 539);
-        // bresenhamLine(g2, 174, 539, 174, 601);
-        // bresenhamLine(g2, 183, 514, 183, 533);
-        // bresenhamLine(g2, 183, 532, 200, 532);
-        // bresenhamLine(g2, 183, 539, 200, 539);
-        // bresenhamLine(g2, 183, 539, 183, 601);
-
-        // g2.setColor(Color.BLACK);
-        // bresenhamLine(g2, 150, 514, 201, 514);
-        // bresenhamLine(g2, 150, 514, 150, 601);
