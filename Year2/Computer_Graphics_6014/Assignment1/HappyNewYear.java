@@ -45,7 +45,7 @@ public class HappyNewYear extends JPanel {
         BufferedImage originalImage;
 
         try {
-            originalImage = ImageIO.read(new File("images.png"));
+            originalImage = ImageIO.read(new File("image.png"));
             // g.drawImage(resizeImage(originalImage, 584, 561), 0, 0, null);
         } catch (IOException e) {
             System.out.println(e);
