@@ -31,7 +31,7 @@ public class HappyNewYear extends JPanel {
 
         frame.add(m);
         frame.setTitle("Happy New Year 🎄🎅🏻❄️");
-        // frame.setResizable(false);
+        frame.setResizable(false);
         frame.setSize(600, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
