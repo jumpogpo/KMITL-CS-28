@@ -8,19 +8,15 @@
  * This file make by student id 65050171 and 65050368
  */
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.Point;
 import java.awt.Polygon;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -42,19 +38,11 @@ public class HappyNewYear extends JPanel {
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = buffer.createGraphics();
 
-        BufferedImage originalImage;
-
-        try {
-            originalImage = ImageIO.read(new File("image.png"));
-            // g.drawImage(resizeImage(originalImage, 584, 561), 0, 0, null);
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-
-        /* Background */
+        /* Main Color */
         Color backgroundColor = new Color(153, 0, 0);
         Color outlineColor = new Color(87, 54, 53);
 
+        /* Background */
         g2.setColor(backgroundColor);
         g2.fillRect(0, 0, 600, 600);
 
@@ -74,6 +62,15 @@ public class HappyNewYear extends JPanel {
         snow(g2, 261, 243);
         snow(g2, 243, 279);
         snow(g2, 324, 111);
+        snow(g2, 155, 342);
+        snow(g2, 48, 320);
+        snow(g2, 77, 399);
+        snow(g2, 437, 66);
+        snow(g2, 279, 36);
+        snow(g2, 211, 36);
+        snow(g2, 363, 41);
+        snow(g2, 514, 66);
+        snow(g2, 552, 312);
 
         /* Letter Two */
         g2.setColor(new Color(118, 0, 0));
@@ -96,8 +93,8 @@ public class HappyNewYear extends JPanel {
         bezierCurve(g2, 173, 122, 169, 130, 161, 137, 144, 143);
 
         /* Letter Four */
-        int xPoly[] = {146, 121, 146};
-        int yPoly[] = {212, 246, 248};
+        int xPoly[] = { 146, 121, 146 };
+        int yPoly[] = { 212, 246, 248 };
         Polygon poly = new Polygon(xPoly, yPoly, xPoly.length);
         g2.drawPolygon(poly);
 
@@ -205,7 +202,7 @@ public class HappyNewYear extends JPanel {
         bezierCurve(g2, 34, 478, 30, 478, 25, 481, 21, 487);
         bezierCurve(g2, 36, 476, 31, 473, 25, 475, 16, 487);
         bezierCurve(g2, 25, 476, 21, 472, 18, 468, 27, 462);
-        bezierCurve(g2, 27, 475, 23, 469,22, 464, 24, 464);
+        bezierCurve(g2, 27, 475, 23, 469, 22, 464, 24, 464);
         bezierCurve(g2, 37, 475, 34, 460, 29, 464, 22, 468);
         bezierCurve(g2, 38, 469, 34, 464, 29, 462, 23, 465);
         bezierCurve(g2, 38, 469, 41, 463, 45, 461, 53, 462);
@@ -232,7 +229,7 @@ public class HappyNewYear extends JPanel {
         bresenhamLine(g2, 194, 546, 185, 562);
         bresenhamLine(g2, 194, 532, 175, 562);
         bresenhamLine(g2, 194, 519, 165, 562);
-        bresenhamLine(g2, 193, 507, 163, 549);   
+        bresenhamLine(g2, 193, 507, 163, 549);
         bresenhamLine(g2, 156, 507, 134, 537);
         bresenhamLine(g2, 159, 520, 133, 555);
         bresenhamLine(g2, 147, 507, 134, 525);
@@ -253,8 +250,8 @@ public class HappyNewYear extends JPanel {
         bezierCurve(g2, 159, 492, 161, 488, 164, 483, 167, 481);
         bezierCurve(g2, 162, 493, 164, 489, 168, 486, 171, 483);
         bezierCurve(g2, 161, 496, 165, 489, 172, 480, 182, 492);
-        bezierCurve(g2, 162, 499, 170, 492, 174, 489, 182, 493); 
-        
+        bezierCurve(g2, 162, 499, 170, 492, 174, 489, 182, 493);
+
         g2.setColor(new Color(28, 156, 202));
         bezierCurve(g2, 152, 508, 140, 501, 140, 493, 147, 488);
         bezierCurve(g2, 157, 508, 149, 501, 145, 496, 144, 490);
@@ -409,7 +406,7 @@ public class HappyNewYear extends JPanel {
 
         bezierCurve(g2, 365, 177, 366, 175, 368, 175, 370, 177);
         bezierCurve(g2, 390, 176, 392, 175, 394, 175, 395, 177);
-        
+
         g2.setColor(new Color(247, 167, 163));
         drawCheek(g2, 359, 185, 6);
         drawCheek(g2, 390, 184, 6);
@@ -510,7 +507,7 @@ public class HappyNewYear extends JPanel {
 
         /* Cat 13 */
         g2.setColor(new Color(255, 163, 62));
-        
+
         bezierCurve(g2, 286, 312, 295, 300, 294, 284, 291, 271);
         bezierCurve(g2, 295, 263, 305, 276, 317, 262, 317, 250);
         bezierCurve(g2, 341, 263, 329, 274, 318, 261, 317, 250);
@@ -558,7 +555,7 @@ public class HappyNewYear extends JPanel {
 
         /* Cat 12 */
         g2.setColor(outlineColor);
-        
+
         bresenhamLine(g2, 472, 315, 494, 315);
 
         bezierCurve(g2, 462, 346, 453, 373, 435, 386, 471, 402);
@@ -713,7 +710,7 @@ public class HappyNewYear extends JPanel {
 
         /* Cat 9 */
         g2.setColor(outlineColor);
-        
+
         bresenhamLine(g2, 480, 455, 485, 467);
         bresenhamLine(g2, 495, 455, 494, 467);
         bresenhamLine(g2, 505, 452, 509, 466);
@@ -758,7 +755,7 @@ public class HappyNewYear extends JPanel {
 
         /* Cat 8 */
         g2.setColor(outlineColor);
-        
+
         bresenhamLine(g2, 399, 458, 406, 480);
         bresenhamLine(g2, 417, 456, 415, 480);
         bresenhamLine(g2, 423, 458, 426, 479);
@@ -835,13 +832,13 @@ public class HappyNewYear extends JPanel {
         g2.setColor(new Color(247, 166, 162));
         drawCheek(g2, 317, 420, 5);
         drawCheek(g2, 352, 420, 5);
-        
+
         g2.setColor(new Color(48, 53, 57));
         drawNose(g2, 337, 415);
 
         /* Cat 6 */
         g2.setColor(outlineColor);
-        
+
         bresenhamLine(g2, 250, 387, 254, 392);
         bresenhamLine(g2, 290, 392, 288, 397);
         bresenhamLine(g2, 239, 449, 242, 469);
@@ -877,7 +874,7 @@ public class HappyNewYear extends JPanel {
 
         /* Cat 5 */
         g2.setColor(outlineColor);
-        
+
         bresenhamLine(g2, 515, 472, 532, 472);
         bresenhamLine(g2, 530, 472, 537, 462);
         bresenhamLine(g2, 506, 534, 512, 548);
@@ -1046,7 +1043,7 @@ public class HappyNewYear extends JPanel {
 
         /* Cat 1 */
         g2.setColor(outlineColor);
-        
+
         bresenhamLine(g2, 209, 478, 198, 529);
         bresenhamLine(g2, 199, 528, 200, 544);
         bresenhamLine(g2, 214, 474, 220, 478);
@@ -1094,12 +1091,12 @@ public class HappyNewYear extends JPanel {
         floodfill(buffer, 233, 526, backgroundColor, new Color(252, 255, 210));
         floodfill(buffer, 240, 556, backgroundColor, new Color(149, 155, 155));
         floodfill(buffer, 202, 518, backgroundColor, new Color(149, 155, 155));
-        floodfill(buffer, 232, 481, backgroundColor, new Color(149, 155, 155));   
-        floodfill(buffer, 248, 484, backgroundColor, new Color(149, 155, 155));   
+        floodfill(buffer, 232, 481, backgroundColor, new Color(149, 155, 155));
+        floodfill(buffer, 248, 484, backgroundColor, new Color(149, 155, 155));
         floodfill(buffer, 218, 502, backgroundColor, new Color(251, 173, 168));
         floodfill(buffer, 246, 501, backgroundColor, new Color(251, 173, 168));
         floodfill(buffer, 230, 496, backgroundColor, new Color(44, 49, 54));
-        
+
         /* Flood Fill Cat 2 */
         floodfill(buffer, 298, 522, backgroundColor, new Color(252, 255, 210));
         floodfill(buffer, 324, 499, backgroundColor, new Color(252, 255, 210));
@@ -1249,7 +1246,7 @@ public class HappyNewYear extends JPanel {
         floodfill(buffer, 416, 270, backgroundColor, new Color(127, 100, 83));
         floodfill(buffer, 374, 272, backgroundColor, new Color(247, 166, 162));
         floodfill(buffer, 405, 269, backgroundColor, new Color(247, 166, 162));
-        
+
         /* Flood Fill Cat 15 */
         floodfill(buffer, 436, 297, backgroundColor, new Color(252, 255, 210));
         floodfill(buffer, 458, 282, backgroundColor, new Color(252, 255, 210));
@@ -1452,7 +1449,15 @@ public class HappyNewYear extends JPanel {
         floodfill(buffer, 262, 243, backgroundColor, new Color(255, 250, 250));
         floodfill(buffer, 244, 279, backgroundColor, new Color(255, 250, 250));
         floodfill(buffer, 325, 111, backgroundColor, new Color(255, 250, 250));
-
+        floodfill(buffer, 156, 341, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 49, 319, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 78, 398, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 438, 65, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 280, 35, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 212, 35, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 364, 40, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 515, 65, backgroundColor, new Color(255, 250, 250));
+        floodfill(buffer, 553, 312, backgroundColor, new Color(255, 250, 250));
         /* Draw */
         g.drawImage(buffer, 0, 0, null);
     }
@@ -1566,17 +1571,6 @@ public class HappyNewYear extends JPanel {
         g.fillRect(x, y, size, size);
     }
 
-    private BufferedImage resizeImage(BufferedImage originalImage, int targetWidth, int targetHeight) {
-        Image resultingImage = originalImage.getScaledInstance(targetWidth, targetHeight, Image.SCALE_DEFAULT);
-        BufferedImage resizedImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_ARGB);
-
-        Graphics2D g2d = resizedImage.createGraphics();
-        g2d.drawImage(resultingImage, 0, 0, null);
-        g2d.dispose();
-
-        return resizedImage;
-    }
-
     private void drawNose(Graphics g2, int x, int y) {
         bezierCurve(g2, x, y, x + 2, y - 2, x + 5, y - 2, x + 5, y);
         bezierCurve(g2, x, y, x + 2, y + 2, x + 5, y + 2, x + 5, y);
@@ -1604,7 +1598,7 @@ public class HappyNewYear extends JPanel {
         bresenhamLine(g2, x + 28, y + 136, x + 93, y + 136);
         bresenhamLine(g2, x + 53, y + 122, x + 93, y + 122);
         bresenhamLine(g2, x + 92, y + 121, x + 92, y + 143);
-    
+
         bresenhamLine(g2, x + 28, y + 142, x + 93, y + 142);
         bezierCurve(g2, x + 45, y + 76, x + 49, y + 71, x + 52, y + 68, x + 58, y + 67);
         bezierCurve(g2, x + 57, y + 67, x + 64, y + 67, x + 67, y + 70, x + 73, y + 74);
