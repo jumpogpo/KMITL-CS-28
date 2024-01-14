@@ -60,3 +60,15 @@
 21:42:43.888628 db@open done T·28.673791ms
 21:44:37.714340 db@close closing
 21:44:37.715193 db@close done T·853.791µs
+=============== Jan 3, 2024 (+07) ===============
+13:04:48.468213 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:04:48.469619 version@stat F·[2 1] S·74KiB[73KiB 723B] Sc·[0.50 0.00]
+13:04:48.469643 db@open opening
+13:04:48.469813 journal@recovery F·1
+13:04:48.471495 journal@recovery recovering @13
+13:04:48.475632 memdb@flush created L0@15 N·5 S·6KiB "Sna..tor,v1360":"unc..own,v1359"
+13:04:48.478221 version@stat F·[3 1] S·80KiB[79KiB 723B] Sc·[0.75 0.00]
+13:04:48.495579 db@janitor F·6 G·0
+13:04:48.495605 db@open done T·25.949208ms
+22:47:02.722013 db@close closing
+22:47:02.724550 db@close done T·2.66825ms
