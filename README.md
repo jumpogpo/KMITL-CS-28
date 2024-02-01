@@ -1,7 +1,7 @@
 # Department of Computer Science, School of Science, King Mongkut's Institute of Technology Ladkrabang (KMITL)
 
 <p align="center">
-  <img src="https://www.science.kmitl.ac.th/department_com/department_img/com_logo_header.png" alt="CS" /></a>
+  <img src="./cs-logo.png" alt="CS" /></a>
 </p>
 
 ## Contact
