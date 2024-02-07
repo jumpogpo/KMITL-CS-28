@@ -80,7 +80,6 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
                     stageTwo = false;
                     showCookie = false;
                     stageThree = true;
-                    System.out.println("Complete");
                     ((Timer) e.getSource()).stop();
                 });
 
