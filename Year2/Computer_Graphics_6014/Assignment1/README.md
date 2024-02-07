@@ -1,15 +1,15 @@
 # CG-Assigement-1
 
-## Original Picture
+## Output Picture
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <div>
-    <img src="https://github.com/jumpogpo/KMITL-CS-28/blob/master/Year2/Computer_Graphics_6014/Assignment1/output.png?raw=true" alt="output image" width="600" style="max-width:100%;">
+    <img src="./output.png" alt="output image" width="600" style="max-width:100%;">
   </div>
 </div>
 
 ## Reference Picture
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <div>
-    <img src="https://github.com/jumpogpo/KMITL-CS-28/blob/master/Year2/Computer_Graphics_6014/Assignment1/original.png?raw=true" alt="output image" width="600" style="max-width:100%;">
+    <img src="./original.png" alt="reference image" width="600" style="max-width:100%;">
   </div>
 </div>
