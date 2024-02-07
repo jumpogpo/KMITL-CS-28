@@ -214,6 +214,8 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
         drawEye(g2, x - 12, y - 57, 8);
         drawEye(g2, x + 35, y - 57, 8);
 
+        floodfill(buffer, x + 16, y - 82, backgroundColor, new Color(247, 210, 183));
+
         // hair
         g2.setColor(new Color(231, 186, 156));
         bresenhamLine(g2, x - 11, y - 102, x + 2, y - 97);
@@ -226,7 +228,6 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
         bezierCurve(g2, x + 1, y - 106, x + 11, y - 101, x + 19, y - 101, x + 25, y - 106);
 
         /* Flood Fill baby left */
-        floodfill(buffer, x + 16, y - 82, backgroundColor, new Color(247, 210, 183));
         floodfill(buffer, x - 4, y - 70, backgroundColor, new Color(0, 0, 0));
         floodfill(buffer, x + 38, y - 70, backgroundColor, new Color(0, 0, 0));
         floodfill(buffer, x - 13, y - 56, backgroundColor, new Color(247, 210, 183));
