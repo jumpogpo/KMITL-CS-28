@@ -147,7 +147,6 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
         g.drawImage(buffer, 0, 0, null);
     }
 
-
     private void babyStageOne(Graphics2D g2, BufferedImage buffer, int x, int y) {
         Color backgroundColor = new Color(176, 255, 217);
         g2.setColor(new Color(86, 183, 198));
@@ -369,7 +368,7 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
 
             floodfill(buffer, x - 27, y - 105, backgroundColor, new Color(255, 255, 255));
             floodfill(buffer, x + 20, y - 105, backgroundColor, new Color(255, 255, 255));
-            
+
             midpointCircle(g2, x - 17, y - 103, 2);
             midpointCircle(g2, x + 14, y - 101, 2);
 
@@ -402,7 +401,7 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
         floodfill(buffer, x - 39, y - 43, backgroundColor, new Color(143, 214, 216));
         floodfill(buffer, x - 1, y - 60, backgroundColor, new Color(143, 214, 216));
         floodfill(buffer, x - 4, y - 83, backgroundColor, new Color(229, 128, 118));
-        
+
     }
 
     private void pig(Graphics2D g2, BufferedImage buffer, int x, int y, int stage) {
@@ -551,7 +550,7 @@ public class Assignment2_65050171_65050368 extends JPanel implements Runnable {
 
         // body
         floodfill(buffer, x, y - 129, backgroundColor, new Color(247, 216, 202));
-     }
+    }
 
     private void cookie(Graphics2D g2, BufferedImage buffer, int x, int y) {
         /* cookie anima */
