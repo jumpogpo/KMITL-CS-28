@@ -233,7 +233,7 @@ int main()
 
         glm::mat4 model(1.0f);
 
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.5f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 2.0f));
         model = glm::scale(model, glm::vec3(0.8f, 0.8f, 1.0f));
 
         glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
