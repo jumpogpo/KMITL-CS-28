@@ -1,0 +1,15 @@
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/bin/Debug/net8.0/Ex3_CSharp
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/bin/Debug/net8.0/Ex3_CSharp.deps.json
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/bin/Debug/net8.0/Ex3_CSharp.runtimeconfig.json
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/bin/Debug/net8.0/Ex3_CSharp.dll
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/bin/Debug/net8.0/Ex3_CSharp.pdb
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.AssemblyInfoInputs.cache
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.AssemblyInfo.cs
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.csproj.CoreCompileInputs.cache
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.sourcelink.json
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.dll
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/refint/Ex3_CSharp.dll
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.pdb
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/Ex3_CSharp.genruntimeconfig.cache
+/Users/Viper/Desktop/KMITL-CS-28/Year3/Ex3/Ex3_CSharp/obj/Debug/net8.0/ref/Ex3_CSharp.dll
