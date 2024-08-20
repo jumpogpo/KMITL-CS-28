@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Pomodoro</string>
+    <string name="work_duration_label">Work</string>
+    <string name="short_break_duration_label">Short Break</string>
+    <string name="long_break_duration_label">Long Break</string>
+    <string name="duration_value">%d min</string>
+    <string name="time_value">%02d</string>
+    <string name="ready">Ready</string>
+    <string name="delimiter">:</string>
+    <string name="state_work">Work</string>
+    <string name="state_short_break">Break</string>
+    <string name="state_long_break">Long Break</string>
+    <string name="notification_time_up_title">Time\'s up</string>
+    <string name="notification_time_up_text_work">It\'s time to break</string>
+    <string name="notification_time_up_text_short_break">It\'s time to work</string>
+    <string name="notification_time_up_text_long_break">It\'s time to work</string>
+</resources>

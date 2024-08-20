@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/red_400"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewState"
+        style="@style/StatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Work" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewMinute"
+            style="@style/TimerText"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:background="@drawable/shape_background_rounded_corner_red_700"
+            tools:text="25" />
+
+        <TextView
+            style="@style/TimerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/delimiter" />
+
+        <TextView
+            android:id="@+id/textViewSecond"
+            style="@style/TimerText"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:background="@drawable/shape_background_rounded_corner_red_700"
+            tools:text="00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPause"
+                style="@style/RoundButton.Medium.Red"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:visibility="gone"
+                app:icon="@drawable/ic_pause_48" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPlay"
+                style="@style/RoundButton.Medium.Red"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:icon="@drawable/ic_play_48" />
+        </FrameLayout>
+
+        <Space
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFastForward"
+            style="@style/RoundButton.Medium.Red"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:icon="@drawable/ic_fast_forward_48" />
+    </LinearLayout>
+</LinearLayout>

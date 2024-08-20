@@ -1,0 +1,71 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Pomodoro" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/amber_300</item>
+        <item name="colorSecondaryVariant">@color/amber_500</item>
+        <item name="colorPrimary">@color/red_700</item>
+        <item name="colorPrimaryVariant">@color/red_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor" >?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="ConfigText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="RoundButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="backgroundTint">@color/selector_button_background_tint</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="iconSize">24dp</item>
+    </style>
+
+    <style name="RoundButton.Small">
+        <item name="iconSize">16dp</item>
+    </style>
+
+    <style name="RoundButton.Small.Red">
+        <item name="iconTint">@color/selector_button_icon_red</item>
+    </style>
+
+    <style name="RoundButton.Medium">
+        <item name="iconSize">36dp</item>
+    </style>
+
+    <style name="RoundButton.Medium.Red">
+        <item name="iconTint">@color/selector_button_icon_red</item>
+    </style>
+
+    <style name="TextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="backgroundTint">@color/selector_button_background_tint</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+    </style>
+
+    <style name="TextButton.Red">
+        <item name="android:textColor">@color/selector_button_text_red</item>
+    </style>
+
+    <style name="TimerText">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StatusText">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
