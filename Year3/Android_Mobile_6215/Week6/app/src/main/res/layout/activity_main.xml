@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/red_400"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_background_rounded_corner_black_alpha_10"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonReady"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ConfigText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/work_duration_label" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonReduceWorkDuration"
+                style="@style/RoundButton.Small.Red"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon="@drawable/ic_reduce_36" />
+
+            <TextView
+                android:id="@+id/textViewWorkDuration"
+                style="@style/ConfigText"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/shape_background_rounded_corner_black_alpha_10"
+                android:gravity="center"
+                android:padding="4dp"
+                tools:text="25 min" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAddWorkDuration"
+                style="@style/RoundButton.Small.Red"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon="@drawable/ic_add_36" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ConfigText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_break_duration_label" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonReduceShortBreakDuration"
+                style="@style/RoundButton.Small.Red"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon="@drawable/ic_reduce_36" />
+
+            <TextView
+                android:id="@+id/textViewShortDuration"
+                style="@style/ConfigText"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/shape_background_rounded_corner_black_alpha_10"
+                android:gravity="center"
+                android:padding="4dp"
+                tools:text="5 min" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAddShortBreakDuration"
+                style="@style/RoundButton.Small.Red"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon="@drawable/ic_add_36" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ConfigText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/long_break_duration_label" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonReduceLongBreakDuration"
+                style="@style/RoundButton.Small.Red"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon="@drawable/ic_reduce_36" />
+
+            <TextView
+                android:id="@+id/textViewLongDuration"
+                style="@style/ConfigText"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/shape_background_rounded_corner_black_alpha_10"
+                android:gravity="center"
+                android:padding="4dp"
+                tools:text="25 min" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAddLongBreakDuration"
+                style="@style/RoundButton.Small.Red"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon="@drawable/ic_add_36" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonReady"
+        style="@style/TextButton.Red"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/ready"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
