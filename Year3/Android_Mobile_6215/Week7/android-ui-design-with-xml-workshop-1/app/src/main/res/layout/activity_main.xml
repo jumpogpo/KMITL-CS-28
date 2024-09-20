@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_background_pink"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/ic_dribbble"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:padding="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:text="@string/back"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/selector_button_background_borderless"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:text="@string/email_sign_up"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/fill_out_information"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:hint="@string/email"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_70"
+            android:background="@drawable/selector_edit_text_background_pink"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:hint="@string/password"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_70"
+            android:background="@drawable/selector_edit_text_background_pink"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:hint="@string/confirm_password"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_70"
+            android:background="@drawable/selector_edit_text_background_pink"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/buttonCreateAccount"
+            android:text="@string/create_account"
+            android:textSize="16sp"
+            android:textColor="@color/pink_dark"
+            android:textAllCaps="false"
+            android:background="@drawable/selector_button_background_white"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_marginTop="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/already_have_account"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttonLogin"
+                android:text="@string/login"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_button_background_borderless"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

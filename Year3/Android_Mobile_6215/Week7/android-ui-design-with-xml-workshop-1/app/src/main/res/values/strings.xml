@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Workshop 1</string>
+
+    <string name="email_sign_up">Sign up the Email</string>
+    <string name="fill_out_information">Please fill out an information below</string>
+    <string name="back">Back</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create an account</string>
+    <string name="already_have_account">Already have an account?</string>
+</resources>
