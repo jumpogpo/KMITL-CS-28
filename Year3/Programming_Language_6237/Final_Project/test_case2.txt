@@ -1,14 +1,13 @@
-A + B
--
-*
-if
-then
-id1
-id2
-id1
-"Hello World"
-/* comment */
-// EiEi
-()
-;
-1Hello
+/* Another multi-line
+   comment here */
+321
+98765
+101
+Size = "Large";
+repeat
+until
+endrepeat
+output
+newline
+scan
+#bad_identifier
