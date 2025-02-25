@@ -1,0 +1,7 @@
+ปัญหาในโค้ดเดิม
+- ImageManager ไม่ปฏิบัติตามหลักการ Open/Closed Principle (OCP) เนื่องจากต้องแก้ไขโค้ดทุกครั้งที่มีการเพิ่ม Renderer ใหม่
+- ImageManager ขาดการแยกความรับผิดชอบที่ชัดเจน (ละเมิดหลักการ Single Responsibility Principle (SRP))
+
+แนวทางแก้ไข
+- ใช้ Strategy Pattern เพื่อหลีกเลี่ยงการใช้ instanceof ใน ImageManager
+- ให้ TVRenderer, LaptopRenderer, และ SmartphoneRenderer ใช้ Interface Renderer เพื่อให้เป็นไปตามหลักการ OCP และ SRP
